@@ -1,0 +1,61 @@
+Show all packages:
+$ apt-cache pkgnames
+
+Show info about one package:
+$ apt-cache show <package_name>
+
+Step 1:
++ Get information:
+	Linux: apt-cache, .git directories
+	Windows: registry
+
++ Output: Database (.txt file) for both Linux/Windows (same format)
+Format: (CSV text file)
+package_name,version,released_date,compilation_date,architecture,size,sha256,sha1,md5sum,homepage,description-md5,filename
+
+Additional info:
++ released date:
++ compilation date: WINDOWS only?
++ filename:
+
+Step 2:
++ Check latest information
+	By APT method? (Linux)
+	By GIT method? (Linux)
+	By manual website checking method? (Linux/Windows)
+	By external provided database (Symantec?)
+
+Input: Package names list (text file)
+Ouput: Database (.txt file) for both Linux/Windows (same format)
+Format: (CSV text file)
+==> should be the same format as Step 1?
+
+Step 3:
++ Compare output files of Step 1 and Step 2.
+=> Identify outdated packages.
+
+Step 4:
++ Make (visualized) report.
+
+ISSUES:
++ Number of packages is very large (only APT is: approx. 60K)
+=> Solution: not process on ALL packages at a time, but process package by package (ONLY ONE) at a time.
+
+CHALLENGES:
++ There are many ways to check current version of installed packages, NEED to specify HOW to select any of them?
+
+
+
+Ref: https://www.cyberciti.biz/faq/debian-ubuntu-linux-apt-get-aptitude-show-package-version-command/
+
++ "LATEST" definition?: also depends on architecture, OS,..?
+--> how to confirm which is latest version suitable for current machine?
++ How to get latest version info with only the Homepage?
++ Other OS without APT?
+
+
+======================
+$ apt list --installed
+
+$ apt-cache pkgnames | while read line; do echo "Processing $line" && apt-show-versions $line | grep -v "not installed"; done
+
