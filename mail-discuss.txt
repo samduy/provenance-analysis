@@ -1,0 +1,33 @@
+Just one point about the first task, since you are already started
+working on it. When I said APT-based I think the most important part
+would be to identify components (programs or libraries) which are
+not installed by an official repository. 
+So, two things:
+ 1. APT can tell you which package installed which file. 
+    So, if you have any binaries or libraries (e.g., under /usr/lib)
+    which do not come from a package.. those are interesting files.
+ 2. If a file comes from a package but the package is not part of the 
+    repositories in /etc/atp/sources -> it means it was manually installed,
+    and it wont be automatically updated. Again, this is an interesting 
+    target.
+Everything else we don't care, as it is managed by the packer manager
+and updated by it.
+===============================
+- We should consider both Linux and Windows
+   * In linux the packer manager provides lots of information. Also man
+     pages and git directories can be useful.
+   * In windows, the registry, the file path, as well as icons and entries
+     in the menu can be very valuable sources of information.
+     Maybe also the browser log can be useful to see which program was
+     downloaded
+- In the two cases, the goal is to find which programs/libraries are present on disk.
+- Then, for each program we should be able to tell if it is the last version and
+  when the last version was released (i.e., if the software seems to still be
+  maintained).
+  There are several ways to do that:
+    * By somehow extracting the version of the program and comparing with
+      the last available on the web
+    * By extracting the compilation date of the binary and comparing with
+      the release date of the last available on the web
+    * (in collaboration with Symantec) by checking if others users have
+      the same program with a different hash but installed more recently
