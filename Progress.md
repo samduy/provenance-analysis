@@ -2,9 +2,10 @@ STEP1: EXTRACT INFORMATION ABOUT PROGRAMS ON DISK:
 ==================================================
 
 1. LINUX:
-[-] Extract information by APT method
+[o] Extract information by APT method
 [ ] Extract information by GIT method
 [ ] Extract information by MAN PAGE method
+[-] Extract information from filesystem
 
 2. WINDOWS:
 [ ] Extract information by REGISTRY method
@@ -32,5 +33,5 @@ STEP 4: MAKE SUMMARY REPORT
 [ ] Make a visualized report
 
 -----------------------------------------------------------
-[ ] NOT STARTED; [-] DOING; [0] DONE
+[ ] NOT STARTED; [-] DOING; [o] DONE
 -----------------------------------------------------------
