@@ -1,0 +1,34 @@
+# Weekly report: 02,03
+## Dates: 02-15, Mar 2017
+-------------------------
+
+## Topic
++ Extract version info of files in interesting list
+
+## Progress
++ Extract information from filesystem: done.
+
+  Detail: Currently, haven't found a way to extract `version
+  info` from a library file or a directory which contains
+  the file.
+
+  Instead, tried to extract following information:
+
+	`Modify datetime, Size, MD5Sum, Build ID`
+
+  with an assumption that modify datetime could be the 
+  compilation date of the file.
+
+  Tried to study the .gnu_version info when `readelf
+  -V` a library, but it seems to be nothing related to
+  version of the program/library.
+
+## Challenges (or Notes)
++ Some program installed a bunch of files (many 
+libraries) in a directory, not just ONLY ONE file.
+
++ Version showed in library name sometimes is not matched 
+with actual version reported by Package Manager.
+
+## Plan
++ Extract information by GIT method.
