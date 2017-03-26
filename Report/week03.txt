@@ -1,0 +1,42 @@
+# Weekly report: 04
+## Dates: 16-26, Mar 2017
+-------------------------
+
+## Topic
++ Extract information by GIT method.
+
+## Progress
++ Confirmed the reliability of Modify datetime to be considered
+as Compiled datetime: DONE.
+
++ Extract information from git directories in the system: DONE.
+  Extracted information: 
+    Directory_path, 
+    git_url, 
+    branch:commit_id,
+    latest_tag:commit_id.
+
++ List up all directory that contains autotool files: DONE.
+  (configure.ac, Makefile.am)
+  => These folders might be interesting.
+
+## Challenges (or Notes)
++ Which will be considered the latest version of a software 
+downloaded by git: the latest commit on master branch or the 
+latest tagged version?
+=> In many softwares, they don't create tags, so the latest 
+commit on master branch will be considered the latest SW 
+version.
+=> However, this is related to the later step.
+
++ With information extracted from `interesting files` (previous
+step), how can we determine those files are latest version or
+not.
+=> Maybe building the catalogue of SW with all of those information
+(Program name, version, installed files, hash, datetimes,..) is
+ncessary.
+
+## Plan
++ Confirm the feasibility of building the catalog of programs 
+with all of information about: VERSION, FILES, HASH, COMPILATION 
+DATE.

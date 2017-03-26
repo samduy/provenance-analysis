@@ -3,7 +3,7 @@ STEP1: EXTRACT INFORMATION ABOUT PROGRAMS ON DISK:
 
 1. LINUX:
 [o] Extract information by APT method
-[ ] Extract information by GIT method
+[o] Extract information by GIT method
 [ ] Extract information by MAN PAGE method
 [o] Extract information from filesystem
 
