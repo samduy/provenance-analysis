@@ -8,7 +8,6 @@ fi
 
 # Process:
 # Print all the directory that has `.git` in it
-echo "Print information from the directory that has .git in it."
 for i in `find $1 -name ".git"`; do \
   PATH=`echo $i | /bin/sed 's,/.git$,,g'`;
 
