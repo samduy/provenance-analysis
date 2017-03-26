@@ -1,3 +1,4 @@
+path,url,branch:head_commitID,latest_tag:commitID
 /var/www/phishing-frenzy,https://github.com/pentestgeek/phishing-frenzy.git,master:e6d13c25e16bab8dd4a5bc987c248258cf4b9891,
 /usr/lib/dradis-projects,https://github.com/dradis/dradis-projects,master:bf44d3bc7f3fb905db75961d1a203d7b9021a393,v3.0.1:86aad4d53449fe4cdebf073ed2a278a06ef8267b
 /usr/lib/dradis-nikto,https://github.com/dradis/dradis-nikto,master:5fd3285a1e8c954e99268774d9b0b57d99929a5c,
