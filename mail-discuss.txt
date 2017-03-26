@@ -1,3 +1,23 @@
+3/20/2017 3:53 PM
+> + Extract information from file system: done.
+>       Currently, I haven't found a way to extract `version  info` from a library file or a directory which contains  the file. 
+>       Instead, I tried to extract following information: `Modify datetime, Size, MD5Sum, Build-ID` with an assumption that `Modify datetime` could be the compilation date of the file.
+For compiled programs this is reasonable assumption. For installed (from a
+package manager) software, the modify date is most likely the date in which it was
+installed.
+
+> ### Notes:
+> + Some program installed a bunch of files (many libraries) in a directory, not just ONLY ONE file.
+Yes, absolutely. A program can also install many executables as well.
+
+> + Version showed in library name sometimes is not matched with actual version reported by Package Manager.
+Of course. As I explained in softdev, the version of the library has a
+special meaning and it does not (and it should not) follow the version of
+the package that contains it.
+
+> + Extract information by GIT method.
+Ack
+===============================
 Just one point about the first task, since you are already started
 working on it. When I said APT-based I think the most important part
 would be to identify components (programs or libraries) which are
