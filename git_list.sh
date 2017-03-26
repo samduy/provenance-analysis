@@ -11,6 +11,12 @@ fi
 echo "Print information from the directory that has .git in it."
 for i in `find $1 -name ".git"`; do \
   PATH=`echo $i | /bin/sed 's,/.git$,,g'`;
+
+  # update git local database
+  pushd $PATH > /dev/null 2>&1 && 
+  /usr/bin/git fetch -tq > /dev/null 2>&1 && 
+  popd > /dev/null 2>&1
+
   URL=`/bin/grep "url" $i/config | /usr/bin/awk '{print $3}'`; 
   HEADS=$(for j in `/bin/ls $i/refs/heads/`; \
     do echo $j:$(/bin/cat $i/refs/heads/$j); \
