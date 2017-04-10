@@ -15,7 +15,7 @@ STEP1: EXTRACT INFORMATION ABOUT PROGRAMS ON DISK:
 STEP 2: CHECK LATEST INFORMATION OF PROGRAMS:
 =============================================
 
-[ ] Get latest VERSION information from Internet
+[-] Get latest VERSION information from Internet
 [ ] Get COMPILATION DATE information from Internet
 [ ] Get HASH information from other source (Symantec)
 
