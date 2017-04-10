@@ -1,3 +1,44 @@
+### Type of programs:
+
+That not managed by Package Manager (APT).
+
+1. Binaries:					  Method
+  * Pre-install (Linux distro)			    [A]
+  * Compliled from source files
+    + Extracted from a TARBALL (remain)		    [A]
+    + Extracted from a TARBALL (deleted)	    [C]
+    + In a GIT repository (remain)		    [B]
+    + In a GIT repository (deleted)		    [C]
+  * (Pre-compiled) Extracted from a TARBALL	    [A]
+
+2. Scripts:
+  * Extracted from a TARBALL			    [A]
+  * In a GIT repository				    [B]
+
+### Method:
+
+## [A]: Modify Date-time based. 
+
+Modify Date-time is (considerably) the Release Date.
+
+## [B]: Git method.
+
+Extract information by git commands (CommitID, Tag, Dates).
+
+## [C]: Other heuristical method.
+
+<Chall-1>: Provided 2 binaries, how to know which one is newer (later version)
+than the other one? => (T.B.D).
+
+<Chall-2>: Provided a program name, how to find latest version info of it on Internet?
+* If it exists on Github: => Use GitHub API?
+* If it does not exist on Github: => (T.B.D)
+
+### Notes:
+* `Binaries`: executable ELF files, libraries (.so), APK (.apk), Java (.jar)
+* `Scripts`: shell(.sh), python(.py, .pyc), perl(.pl).
+
+========================================
 Show all packages:
 $ apt-cache pkgnames
 
