@@ -2,8 +2,9 @@
 
 import sys
 import json
-import pycurl
-from StringIO import StringIO
+#import pycurl
+import requests
+#from StringIO import StringIO
 
 GITHUB_URL = 'https://api.github.com'
 SEARCH_URL = GITHUB_URL+'/search'
@@ -22,15 +23,23 @@ else:
 url = SEARCH_URL+"/"+query
 
 # Request
-buffer = StringIO()
-c = pycurl.Curl()
-c.setopt(c.URL, url)
-c.setopt(c.WRITEDATA, buffer)
-c.perform()
-c.close()
 
-body = buffer.getvalue()
-print body
+# (CURL way)
+# buffer = StringIO()
+# c = pycurl.Curl()
+# c.setopt(c.URL, url)
+# c.setopt(c.WRITEDATA, buffer)
+# c.perform()
+# c.close()
+# 
+# body = buffer.getvalue()
 
-#data = json.loads(body)
-#print data
+# (Classic way)
+r = requests.get(url)
+if (r.ok): body = r.text
+
+#print body
+
+# Extract JSON data
+data = json.loads(body)
+print data
