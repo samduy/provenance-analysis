@@ -34,6 +34,7 @@ else:
 
 # Formulate the request url
 url = SEARCH_URL+"/"+user+"/"+repo
+#urltag = url + "/tags?page=1&per_page=1"
 urltag = url + "/tags"
 urlrel = url + "/releases/latest"
 
@@ -59,10 +60,21 @@ if (body):
   data = json.loads(body)
 
   if (rtype != "[RELEASE]"):
-    len = len(data)
+    # Finding the latest tag by comparing its created dates.
+    # TODO: this is intensively heavy. Need another solution for better performance.
     for i in data:
       commit = i[u'commit'][u'sha']
-      print i[u'name'] + ":" + commit + ":" + getCommitDate(commit)
+      # get the created date of the commit associated with the tag
+      date = getCommitDate(commit)
+      # add a new field to the item
+      i[u'created_at'] = date
+      #print i[u'name'] + ":" + commit + ":" + date
+    #sort all the tag items by its created date
+    sorted_data = sorted(data, key=lambda k:k[u'created_at'], reverse=True)
+    #latest tag is the first item of the sorted list
+    latest_item = sorted_data[0]
+    #print latest_item
+    print rtype + ",name:"+ latest_item[u'name'] + ",tag:" + latest_item[u'name'] + ",created_at:" + latest_item[u'created_at']
   else:
     print rtype + ",name:"+ data[u'name'] + ",tag:" + data[u'tag_name'] + ",created_at:" + data[u'created_at'] + ",published_at:" + data[u'published_at']
 else: 
