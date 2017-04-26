@@ -7,14 +7,15 @@ from pprint import pprint
 
 GITHUB_URL = 'https://api.github.com'
 SEARCH_URL = GITHUB_URL+'/repos'
+TOKEN = 'token ed0af45a6427021b17c3a25abfd7728f35a00ce2'
 
 #TODO: Consider using PyGithub if neccesary.
 
 def getCommitDate(commit_sha):
-  global url
+  global url, TOKEN
   body = None
 
-  r = requests.get(url+"/git/commits/"+commit_sha)
+  r = requests.get(url+"/git/commits/"+commit_sha, headers={'Authorization':TOKEN})
   if (r.ok):
     body = r.text
   if (body):
@@ -40,14 +41,14 @@ body = None
 rtype = None  #Type: Published release OR tag
 
 # Request
-r = requests.get(urlrel)
+r = requests.get(urlrel, headers={'Authorization':TOKEN})
 if ((r.ok) and (len(r.text) > 2)): #work-around
   rtype = "[RELEASE]"
   body = r.text
   #print body
 else: 
   rtype = "[TAG]"
-  r = requests.get(urltag)
+  r = requests.get(urltag, headers={'Authorization':TOKEN})
   if (r.ok): body = r.text
   else: body = None
 
