@@ -7,7 +7,8 @@ from pprint import pprint
 
 GITHUB_URL = 'https://api.github.com'
 SEARCH_URL = GITHUB_URL+'/repos'
-TOKEN = 'token ed0af45a6427021b17c3a25abfd7728f35a00ce2'
+TOKEN = 'token'
+TOKEN_FILE = "./token"
 
 #TODO: Consider using PyGithub if neccesary.
 
@@ -25,7 +26,7 @@ def getCommitDate(commit_sha):
     return "N/A"
 
 # Check arguments
-if len(sys.argv) < 2:
+if len(sys.argv) < 3:
   print "Usage: %s <user> <repo>" %sys.argv[0]
   sys.exit()
 else: 
@@ -41,6 +42,16 @@ urlrel = url + "/releases/latest"
 body = None
 rtype = None  #Type: Published release OR tag
 
+# Check token
+try:
+  f = open(TOKEN_FILE, "r")
+except:
+  print "Unable to get token key. Please get the Github API token key for your account and save it in: " + TOKEN_FILE
+  print '$ curl -i -u <YourUserName> -d \'{"scopes": ["repo", "user"], "note": "Getting-started"}\' https://api.github.com/authorizations'
+  sys.exit()
+token_key = f.read().strip()
+TOKEN = TOKEN + " " + token_key
+
 # Request
 r = requests.get(urlrel, headers={'Authorization':TOKEN})
 if ((r.ok) and (len(r.text) > 2)): #work-around
@@ -51,7 +62,9 @@ else:
   rtype = "[TAG]"
   r = requests.get(urltag, headers={'Authorization':TOKEN})
   if (r.ok): body = r.text
-  else: body = None
+  else: 
+    print r.text
+    sys.exit()
 
 #print body
 
