@@ -59,7 +59,7 @@ url = SEARCH_URL+"/"+user+"/"+repo
 #urltag = url + "/tags?page=1&per_page=1"
 urltag = url + "/tags"
 urlrel = url + "/releases/latest"
-urlci = url + "/git/commits"
+urlci = url + "/commits"
 
 # Token key
 TOKEN = load_token_key(TOKEN_FILE)
@@ -67,9 +67,24 @@ TOKEN = load_token_key(TOKEN_FILE)
 # Request for PUBLISHED RELEASES
 data, error = github_request(urlrel)
 
+# Request for COMMITS
+data_ci, error_ci = github_request(urlci)
+
 # Print results
 if (data):
-  print "name:"+ data[u'name'] + ",tag:" + data[u'tag_name'] + ",created_at:" + data[u'created_at'] + ",published_at:" + data[u'published_at']
+  print "[LATEST_RELEASE]"+ data[u'name'] + ",tag:" + data[u'tag_name'] + ",created_at:" + data[u'created_at'] + ",published_at:" + data[u'published_at']
 else:
-  print "No published releases."
-  print "Error: " + error["message"]
+  print "[LATEST_RELEASE]None."
+  #print "No published releases."
+  #print "Error: " + error["message"]
+
+if (data_ci):
+  #print data_ci
+  #for ci in data_ci:
+    ci = data_ci[0]
+    sha = ci["sha"]
+    commit = ci["commit"]
+    date = commit["committer"]["date"]
+    print "[LATEST_COMMIT]"+sha +",created_at:"+ date
+else:
+  print "Error: " + error_ci["message"]
