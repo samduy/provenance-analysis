@@ -71,11 +71,16 @@ data, error = github_request(urlrel)
 data_ci, error_ci = github_request(urlci)
 
 # Print results
+result = "user:"+user+",repo:" + repo
+
 if (data):
-  print "[LATEST_RELEASE]"+ data[u'name'] + ",tag:" + data[u'tag_name'] + ",created_at:" + data[u'created_at'] + ",published_at:" + data[u'published_at']
+  latest_release = data[u'name']
+  rel_tag_name = data[u'tag_name']
+  rel_created_date = data[u'created_at']
+  rel_published_date = data[u'published_at']
+  result += ",latest_release:"+latest_release+",released_date:"+rel_published_date
 else:
-  print "[LATEST_RELEASE]None."
-  #print "No published releases."
+  result += ",latest_release:n/a"
   #print "Error: " + error["message"]
 
 if (data_ci):
@@ -84,7 +89,10 @@ if (data_ci):
     ci = data_ci[0]
     sha = ci["sha"]
     commit = ci["commit"]
-    date = commit["committer"]["date"]
-    print "[LATEST_COMMIT]"+sha +",created_at:"+ date
+    ci_date = commit["committer"]["date"]
+    result += ",latest_commit:"+sha+",committed_date:"+ci_date
 else:
-  print "Error: " + error_ci["message"]
+  result += ",latest_commit:n/a"
+  #print "Error: " + error_ci["message"]
+
+print result
