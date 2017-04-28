@@ -3,28 +3,49 @@
 import sys
 import json
 import requests
-from pprint import pprint
 
 GITHUB_URL = 'https://api.github.com'
 SEARCH_URL = GITHUB_URL+'/repos'
-TOKEN = 'token'
+TOKEN = ''
 TOKEN_FILE = "./token"
 
 #TODO: Consider using PyGithub if neccesary.
 
-def getCommitDate(commit_sha):
-  global url, TOKEN
-  body = None
+# Request to GitHub
+def github_request(url):
+  data = None
+  error = None
+  r = requests.get(url, headers={'Authorization':TOKEN})
+  if ((r.ok) and (len(r.text) > 2)): #work-around
+    data = json.loads(r.text)
+  else:
+    error = json.loads(r.text)
+  return data, error
 
-  r = requests.get(url+"/git/commits/"+commit_sha, headers={'Authorization':TOKEN})
+# Get the created date of specific commit
+def getCommitDate(commit_sha):
+  global urlci, TOKEN
+  body = None
+  r = requests.get(urlci+"/"+commit_sha, headers={'Authorization':TOKEN})
   if (r.ok):
     body = r.text
   if (body):
     data = json.loads(body)
     return data['committer']['date']
-  else:
-    return "N/A"
+  return "N/A"
 
+# Load the GitHub token key from file
+def load_token_key(filename):
+  # Check token
+  try:
+    f = open(filename, "r")
+  except:
+    print "Unable to get token key. Please get the Github API token key for your account and save it in: " + filename
+    print 'Reference: https://api.github.com/authorizations'
+    sys.exit()
+  return 'token '+f.read().strip()
+
+## MAIN
 # Check arguments
 if len(sys.argv) < 3:
   print "Usage: %s <user> <repo>" %sys.argv[0]
@@ -38,57 +59,17 @@ url = SEARCH_URL+"/"+user+"/"+repo
 #urltag = url + "/tags?page=1&per_page=1"
 urltag = url + "/tags"
 urlrel = url + "/releases/latest"
+urlci = url + "/git/commits"
 
-body = None
-rtype = None  #Type: Published release OR tag
+# Token key
+TOKEN = load_token_key(TOKEN_FILE)
 
-# Check token
-try:
-  f = open(TOKEN_FILE, "r")
-except:
-  print "Unable to get token key. Please get the Github API token key for your account and save it in: " + TOKEN_FILE
-  print '$ curl -i -u <YourUserName> -d \'{"scopes": ["repo", "user"], "note": "Getting-started"}\' https://api.github.com/authorizations'
-  sys.exit()
-token_key = f.read().strip()
-TOKEN = TOKEN + " " + token_key
+# Request for PUBLISHED RELEASES
+data, error = github_request(urlrel)
 
-# Request
-r = requests.get(urlrel, headers={'Authorization':TOKEN})
-if ((r.ok) and (len(r.text) > 2)): #work-around
-  rtype = "[RELEASE]"
-  body = r.text
-  #print body
-else: 
-  rtype = "[TAG]"
-  r = requests.get(urltag, headers={'Authorization':TOKEN})
-  if (r.ok): body = r.text
-  else: 
-    print r.text
-    sys.exit()
-
-#print body
-
-if (body):
-  # Extract JSON data
-  data = json.loads(body)
-
-  if (rtype != "[RELEASE]"):
-    # Finding the latest tag by comparing its created dates.
-    # TODO: this is intensively heavy. Need another solution for better performance.
-    for i in data:
-      commit = i[u'commit'][u'sha']
-      # get the created date of the commit associated with the tag
-      date = getCommitDate(commit)
-      # add a new field to the item
-      i[u'created_at'] = date
-      #print i[u'name'] + ":" + commit + ":" + date
-    #sort all the tag items by its created date
-    sorted_data = sorted(data, key=lambda k:k[u'created_at'], reverse=True)
-    #latest tag is the first item of the sorted list
-    latest_item = sorted_data[0]
-    #print latest_item
-    print rtype + ",name:"+ latest_item[u'name'] + ",tag:" + latest_item[u'name'] + ",created_at:" + latest_item[u'created_at']
-  else:
-    print rtype + ",name:"+ data[u'name'] + ",tag:" + data[u'tag_name'] + ",created_at:" + data[u'created_at'] + ",published_at:" + data[u'published_at']
-else: 
-  print "No data."
+# Print results
+if (data):
+  print "name:"+ data[u'name'] + ",tag:" + data[u'tag_name'] + ",created_at:" + data[u'created_at'] + ",published_at:" + data[u'published_at']
+else:
+  print "No published releases."
+  print "Error: " + error["message"]
