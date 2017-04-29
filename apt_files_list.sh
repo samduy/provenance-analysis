@@ -15,4 +15,5 @@ if [ ! -f $1 ]; then
 fi
 
 # Process
-cat $1 | while read line; do dpkg-query -L $line; done | grep "usr/lib/*."
+#cat $1 | while read line; do dpkg-query -L $line; done | grep "usr/lib/*."
+cat $1 | while read line; do dpkg-query -L $line; done

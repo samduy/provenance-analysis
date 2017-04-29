@@ -3,10 +3,13 @@
 
 APT_PKGNAMES=apt-pkgnames.list
 APT_LST=apt.list
-APT_SO_LST=apt_so.list
-USR_LIB_LST=usr_lib.list
+APT_SO_LST=apt_sorted.list
+ALL_FILES_LST=all_files.list
 INTERESTING_LST=interesting.list
 FILES_INFO=files_info.dat
+
+SCAN_TYPES=(so|sh|py|pyc|rb|jar|apk)
+SCAN_DIRS="/usr/lib /usr/share"
 
 .PHONY:clean clean-all
 
@@ -14,21 +17,21 @@ all: $(FILES_INFO)
 
 $(APT_PKGNAMES): 
 	@echo "[-] List up all packages are currently installed and managed by APT"
-	@./apt_list.sh > $@ 
+	@./apt_pkglist.sh > $@ 
 
 $(APT_LST): $(APT_PKGNAMES)
-	@echo "[-] List up all files that are installed by packages managed by APT"
-	@./files_list.sh $< > $@
+	@echo "[-] List up all files that are installed by the packages that managed by APT"
+	@./apt_files_list.sh $< > $@
 
-$(USR_LIB_LST):
-	@echo "[-] List up all libraries (binaries) inside /usr/lib directory"
-	@./usr_lib_list.sh > $@
+$(ALL_FILES_LST):
+	@echo "[-] List up all libraries (binaries) inside $(SCAN_DIRS) directories"
+	@./all_files_list.sh $(SCAN_DIRS) > $@
 
 $(APT_SO_LST): $(APT_LST) 
-	@echo "[-] Filter only files .so which were installed by APT in usr/lib directory"
-	@cat $< | grep "\.so" > $@
+	@echo "[-] Filter only specific file types, $(SCAN_TYPES), which were installed by APT directory"
+	@cat $< | egrep "\.$(SCAN_TYPES)" > $@
 
-$(INTERESTING_LST): $(APT_SO_LST) $(USR_LIB_LST)
+$(INTERESTING_LST): $(APT_SO_LST) $(ALL_FILES_LST)
 	@echo "[-] List up only files that were not installed by APT"
 	@sort $< $^ | uniq -u > $@
 
