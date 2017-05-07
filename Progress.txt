@@ -16,7 +16,7 @@ STEP 2: CHECK LATEST INFORMATION OF PROGRAMS:
 =============================================
 
 [-] Get latest VERSION information from Internet
-[ ] Get COMPILATION DATE information from Internet
+[-] Get COMPILATION DATE information from Internet
 [ ] Get HASH information from other source (Symantec)
 
 STEP 3: COMPARE THE INFORMATION GATHERED:
@@ -25,7 +25,7 @@ STEP 3: COMPARE THE INFORMATION GATHERED:
 [ ] Check VERSION and RELEASED date
 [ ] Check COMPILATION DATE
 [ ] Check HASH information
-[ ] Heuristical analyze
+[-] Heuristical analyze
 
 STEP 4: MAKE SUMMARY REPORT
 ===========================

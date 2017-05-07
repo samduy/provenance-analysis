@@ -1,3 +1,14 @@
+TWO BIGGEST CHALLENGES:
+=======================
+CHALLENGE-1:
+------------
++ With an abitrary file in the system, how to know exactly the version (and related info: released date,...) of the program/package it belongs to?
+
+CHALLENGE-2:
+------------
++ With a program name (or its file names), how to find information about its latest version on Internet?
+
+==========================================
 ### Type of programs:
 
 That not managed by Package Manager (APT).
