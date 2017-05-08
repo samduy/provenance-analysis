@@ -12,8 +12,14 @@ PROGRAMS_INFO=programs_info.dat
 INTERNET_INFO=internet_info.dat
 
 SCAN_TYPES=(so|sh|py|pyc|rb|jar|apk)
+
+# Specify directories to scan
+ifdef DIR
+SCAN_DIRS=$(DIR)
+else
 #SCAN_DIRS="/usr/lib /usr/share /var"
 SCAN_DIRS="/opt"
+endif
 
 .PHONY:clean clean-all
 
