@@ -56,7 +56,7 @@ else:
     user = user_repo.split(":")[0]
     repo = user_repo.split(":")[1]
   else:
-    print "Parameter should be in the right format: <user>:<repo>"
+    print "%s should be in the right format <user>:<repo>" %user_repo
     sys.exit()
 
 # Formulate the request url
