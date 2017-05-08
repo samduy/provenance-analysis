@@ -47,12 +47,17 @@ def load_token_key(filename):
 
 ## MAIN
 # Check arguments
-if len(sys.argv) < 3:
-  print "Usage: %s <user> <repo>" %sys.argv[0]
+if len(sys.argv) < 2:
+  print "Usage: %s <user>:<repo>" %sys.argv[0]
   sys.exit()
 else: 
-  user = str(sys.argv[1])
-  repo = str(sys.argv[2])
+  user_repo = str(sys.argv[1])
+  if (user_repo.find(":") >= 0):
+    user = user_repo.split(":")[0]
+    repo = user_repo.split(":")[1]
+  else:
+    print "Parameter should be in the right format: <user>:<repo>"
+    sys.exit()
 
 # Formulate the request url
 url = SEARCH_URL+"/"+user+"/"+repo

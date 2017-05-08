@@ -60,6 +60,7 @@ if (data):
     repo_full_name = repo["full_name"]
     owner_name = repo["owner"]["login"]
     html_url = repo["html_url"]
-    print  "owner:"+owner_name+",repo:"+repo_name
+    #print  "owner:"+owner_name+",repo:"+repo_name
+    print  owner_name+":"+repo_name
 else:
   print "Error: " + error["message"]
