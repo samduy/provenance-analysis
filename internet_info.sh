@@ -27,6 +27,7 @@ userrepos=$(
 for filepath in $longest_filepaths; do \
   full_filepath=$dir/$filepath;
   #echo $full_filepath;
+  sleep 5 # avoid connection refused from Github server
   internet_repos=$(python ./github_filesearch.py $filepath | sort | uniq -u)
   for line in $internet_repos; do \
     echo $line; \

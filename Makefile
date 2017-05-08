@@ -9,14 +9,16 @@ INTERESTING_LST=interesting.list
 INTERESTING_DIRS_LST=interesting_dirs.list
 FILES_INFO=files_info.dat
 PROGRAMS_INFO=programs_info.dat
+INTERNET_INFO=internet_info.dat
 
 SCAN_TYPES=(so|sh|py|pyc|rb|jar|apk)
-SCAN_DIRS="/usr/lib /usr/share /var"
+#SCAN_DIRS="/usr/lib /usr/share /var"
+SCAN_DIRS="/opt"
 
 .PHONY:clean clean-all
 
 #all: $(FILES_INFO)
-all: $(PROGRAMS_INFO)
+all: $(PROGRAMS_INFO) $(INTERNET_INFO)
 
 $(APT_PKGNAMES): 
 	@echo "[-] List up all packages are currently installed and managed by APT"
@@ -40,11 +42,18 @@ $(INTERESTING_LST): $(APT_SO_LST) $(ALL_FILES_LST)
 
 $(INTERESTING_DIRS_LST): $(INTERESTING_LST)
 	@echo "[-] Extract programs list that not managed by APT"
-	@cat $< | awk -F'/' '{print "/"$$2"/"$$3"/"$$4}' | sort | uniq -d > $@
+	#@cat $< | awk -F'/' '{print "/"$$2"/"$$3"/"$$4}' | sort | uniq -d > $@
+	@cat $< | awk -F'/' '{print "/"$$2"/"$$3}' | sort | uniq -d > $@
 
 $(PROGRAMS_INFO): $(INTERESTING_DIRS_LST) $(INTERESTING_LST) 
 	@echo "[-] Extract information of each program"
+	@echo "path,modified_datetime,modified_datetime_human_readable" > $@
 	@cat $< | while read line; do ./extract_info2.sh $$line $(INTERESTING_LST); done >> $@
+
+$(INTERNET_INFO): $(INTERESTING_DIRS_LST) $(INTERESTING_LST)
+	@echo "[-] Get the latest information of each program from Internet"
+	@echo "path,github_user,github_repo,latest_release,latest_commit,comitted_date" > $@
+	@cat $< | while read line; do ./internet_info.sh $$line $(INTERESTING_LST); done >> $@
 
 $(FILES_INFO): $(INTERESTING_LST)
 	@echo "[-] Extract information of each interesting file"
