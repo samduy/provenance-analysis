@@ -19,13 +19,13 @@ file_list=$2
 NUMBER_OF_FILES=3 # Change this for better determination.
 
 #Get a number of files that have longest file paths inside the program dir
-longest_filepaths=$(grep $dir $file_list | sed -r -n 's,('$1')/(.*),\2,p' | awk '{print length, $0}' | sort -nr | head -$NUMBER_OF_FILES | awk '{print $2}')
+longest_filepaths=$(grep $dir $file_list | sed -r -n 's,('$dir')/(.*),\2,p' | awk '{print length, $0}' | sort -nr | head -$NUMBER_OF_FILES | awk '{print $2}')
 #echo $longest_filepaths
 
 #Use GitHub API to search for those filepaths to find their public repo on internet
 userrepos=$(
 for filepath in $longest_filepaths; do \
-  full_filepath=$1/$filepath;
+  full_filepath=$dir/$filepath;
   #echo $full_filepath;
   internet_repos=$(python ./github_filesearch.py $filepath | sort | uniq -u)
   for line in $internet_repos; do \
