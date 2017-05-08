@@ -1,0 +1,26 @@
+# Weekly report: 04
+## Dates: 01-08, May 2017
+-------------------------
+
+1. Some program have several repositories on GitHub that match them (They are open source, so there must be someone clone them and uploaded them again on GitHub with or without modification)
+=> Currently, my approach is:
+  + Choose several (currently 3) files in program directory with *longest* path to search: it increase the chance the search result will be identical to the program we are looking for (avoid searching too common file name such as: init.py, controller.py, configuration.py, …). 
+  + For all the returned repos, get the latest info of them all. We may analyze them later to find which one is authentic.
+
+2. Even we’re using token key from GitHub (which means we can make up to 5000 requests per hour), there were some cases that GitHub refused our connection during the process (I guess, there is a limit for number of requests per minute also but I haven’t found the information about that). 
+=> So, my work-around is put a small gap between each search request (currently, 5 seconds seems to be fine). 
+
+3. Some programs don’t have available source on GitHub. 
+=> We may need to think about getting information from other websites also (?).
+
+# I tried to run the whole program on my Linux machine, and I get a sample result as below:
+- programs_info.dat: information of (manually installed) programs on disk.
+- internet_info.dat: latest version information of them, found on internet.
+
+I put the files at the following location:
+https://github.com/samduy/provenance-analysis/tree/master/sample/output_20170508
+
+You may wanna take a look at it.
+
+# Other notes:
+- I updated the README with the manual of how to run our program also.

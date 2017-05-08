@@ -1,0 +1,70 @@
+# Weekly report: 
+## Dates: 24-28, April 2017
+-------------------------
+
+I’ve created a script (github_filesearch.py) dedicated for file path search only (we don’t need to care about syntax of Github, just provide file path as it is). 
+And I’ve updated the script (github_latest.py) for getting the latest release (if available) and the latest commit of a program.
+
+The sample result as below:
+----
+$ python github_filesearch.py "avatar/interfaces/s2e_remote_memory.py"
+owner:gitttt,repo:avatar-python-private
+owner:eurecom-s3,repo:avatar-python
+
+$ python github_latest.py eurecom-s3 avatar-python
+user:eurecom-s3,repo:avatar-python,latest_release:n/a,latest_commit:c6d74f85f63333e3031e1f5e208d3f90e316a9e4,committed_date:2016-10-18T12:45:43Z
+----
+
+# Searching by file path is, indeed, a very good solution. Thank you!
+# One small issue to deal with, some programs (files) exist in more than one repo (like the avatar project above). 
+We may need to think about how to decide which one should be chosen.
+
+Next step, I will integrate and run this on our interesting files, to see what we can get.
+
+=============================
+File path search is confirmed.
+
+We can search a file path (e.g. "src/avatar/avatar.py") on GitHub by the following query:
+“path:src/avatar/ filename:avatar.py”.
+
+# We need to separate the filename and the directory path, but it’s not a big deal.
+# Your provided path returned no result, but the following one worked! 😊
+“path:avatar/interfaces filename:s2e_remote_memory.py” (for example)
+# The category used for search should be “code”, not “repositories”.
+
+# IMPORTANT: we need to login to search! Otherwise, no result is returned.
+
+I updated the script on GitHub also.
+
+We can try with:
+$ python github_search.py code “path:avatar/interfaces filename:s2e_remote_memory.py”
+
+=============================
+
+I’ve implemented a function to get the latest release/tag of a software on GitHub.
+Usage: 
+                $ python github_latest.py <user> <repo>
+
+## Something to be noted:
+-Currently I need to provide software’s owner (<user>) in the command. Next time, I will try to improve by detecting it automatically (in someway).
+-If the software has *published* releases, we will get those (together with their “published date”). 
+-If the software doesn’t have any *published* releases (in many cases), the tags information will be acquired.
+-In case of getting tags’, I had to get their “created date” also, in order to determine which one was the latest. This has been done but may not be the best solution. It’s slow!
+
+## Sample output:
+$ python github_latest.py wisebrains wise-archetypes
+[RELEASE],name:Release v1.1,tag:v1.1,created_at:2014-08-15T19:03:45Z,published_at:2014-09-20T11:25:48Z
+
+$ python github_latest.py rapid7 metasploit-framework
+[TAG],name:4.14.14,tag:4.14.14,created_at:2017-04-21T16:21:49Z
+
+$ python github_latest.py mozilla gecko-dev
+[TAG],name:B2G_2_5_20160125_MERGEDAY,tag:B2G_2_5_20160125_MERGEDAY,created_at:2016-01-25T11:02:06Z
+
+$ python github_latest.py beefproject beef
+[TAG],name:beef-0.4.7.0,tag:beef-0.4.7.0,created_at:2015-12-23T11:15:36Z
+
+## All updated source code is available at our GitHub page, as always.
+https://github.com/samduy/provenance-analysis
+
+
