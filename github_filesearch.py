@@ -16,7 +16,15 @@ TOKEN_FILE = "./token"
 def github_request(url):
   data = None
   error = None
-  r = requests.get(url, headers={'Authorization':TOKEN})
+  hdr={'Authorization':TOKEN}
+  #print hdr
+  r = ''
+  while (r == ''):
+    try:
+      r = requests.get(url, headers={'Authorization':TOKEN})
+    except requests.exceptions.ConnectionError:
+      print 'Connection refused. Retry in 5 seconds.'
+      sleep(5)
   if ((r.ok) and (len(r.text) > 2)): #work-around
     data = json.loads(r.text)
   else:
