@@ -1,8 +1,14 @@
 # Manual
 ## 0. Prerequisites
 
+### GitHub API
 You will need a GitHub-API OAUTH token key to use in this program.
 Please go to <https://developer.github.com/v3/oauth/> and get your own key, and save it to a file named `token` under the root directory of this program.
+
+### Update APT
+```bash
+$ sudo apt-get update
+```
 
 ## 1. To start analysing
 
