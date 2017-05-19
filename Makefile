@@ -17,8 +17,8 @@ SCAN_TYPES=(so|sh|py|pyc|rb|jar|apk)
 ifdef DIR
 SCAN_DIRS=$(DIR)
 else
-#SCAN_DIRS="/usr/lib /usr/share /var"
-SCAN_DIRS="/opt"
+SCAN_DIRS="/usr/lib /usr/share /var"
+#SCAN_DIRS="/opt"
 endif
 
 .PHONY:clean clean-all
