@@ -4,6 +4,7 @@ import sys
 import json
 import requests
 import os
+import time
 
 GITHUB_URL = 'https://api.github.com'
 SEARCH_URL = GITHUB_URL+'/search'
@@ -23,8 +24,8 @@ def github_request(url):
     try:
       r = requests.get(url, headers={'Authorization':TOKEN})
     except requests.exceptions.ConnectionError:
-      print 'Connection refused. Retry in 5 seconds.'
-      sleep(5)
+      print >> sys.stderr, 'Connection refused. Retry in 5 seconds.'
+      time.sleep(5)
   if ((r.ok) and (len(r.text) > 2)): #work-around
     data = json.loads(r.text)
   else:
@@ -37,15 +38,15 @@ def load_token_key(filename):
   try:
     f = open(filename, "r")
   except:
-    print "Unable to get token key. Please get the Github API token key for your account and save it in: " + filename
-    print 'Reference: https://api.github.com/authorizations'
+    print >> sys.stderr, "Unable to get token key. Please get the Github API token key for your account and save it in: %s" %filename
+    print >> sys.stderr, 'Reference: https://api.github.com/authorizations'
     sys.exit()
   return 'token '+f.read().strip()
 
 ## MAIN
 # Check arguments
 if len(sys.argv) < 2:
-  print "Usage: %s <file_path>" %sys.argv[0]
+  print >> sys.stderr, "Usage: %s <file_path>" %sys.argv[0]
   sys.exit()
 else: 
   file_path = str(sys.argv[1])
@@ -60,7 +61,21 @@ url = SEARCH_URL+"/"+query
 TOKEN = load_token_key(TOKEN_FILE)
 
 # Request
-data, error = github_request(url)
+while (1):
+  data, error = github_request(url)
+  if ( error ):
+    msg = str(error["message"])
+    if (msg.find("limit exceeded") > 0):
+      print >> sys.stderr, "Error: %s Sleep 5 seconds." % msg
+      time.sleep(5)
+    elif (msg.find("abuse detection") > 0):
+      print >> sys.stderr, "Error: %s Sleep 60 seconds." % msg
+      time.sleep(60)
+    else:
+      break
+  else:
+    break
+  
 if (data):
   for i in data["items"]:
     repo = i["repository"]
@@ -71,4 +86,4 @@ if (data):
     #print  "owner:"+owner_name+",repo:"+repo_name
     print  owner_name+":"+repo_name
 else:
-  print "Error: " + error["message"]
+  print >> sys.stderr, "Error: " + error["message"]

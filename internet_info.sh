@@ -34,8 +34,8 @@ done
 # Filter the result: get only the repo that appear in all returned results
 # (Since each search with individual file path returns more than one possible repo. 
 # The one we are looking for is the one that exist in all the returned results.)
-for ur in $userrepos; do echo $ur; done | sort | uniq -c | gawk '$1=='$NUMBER_OF_FILES'{print $2}'
+userrepos_filtered=$(for ur in $userrepos; do echo $ur; done | sort | uniq -c | gawk '$1=='$NUMBER_OF_FILES'{print $2}')
 
-#for userrepo in $userrepos; do \
-#  echo $dir,$(./github_latest.py $userrepo); 
-#done
+for userrepo in $userrepos_filtered; do \
+  echo $dir,$(./github_latest.py $userrepo); 
+done

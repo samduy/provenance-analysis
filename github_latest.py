@@ -40,15 +40,15 @@ def load_token_key(filename):
   try:
     f = open(filename, "r")
   except:
-    print "Unable to get token key. Please get the Github API token key for your account and save it in: " + filename
-    print 'Reference: https://api.github.com/authorizations'
+    print >> sys.stderr, "Unable to get token key. Please get the Github API token key for your account and save it in: " + filename
+    print >> sys.stderr, 'Reference: https://api.github.com/authorizations'
     sys.exit()
   return 'token '+f.read().strip()
 
 ## MAIN
 # Check arguments
 if len(sys.argv) < 2:
-  print "Usage: %s <user>:<repo>" %sys.argv[0]
+  print >> sys.stderr, "Usage: %s <user>:<repo>" %sys.argv[0]
   sys.exit()
 else: 
   user_repo = str(sys.argv[1])
@@ -56,7 +56,7 @@ else:
     user = user_repo.split(":")[0]
     repo = user_repo.split(":")[1]
   else:
-    print "%s should be in the right format <user>:<repo>" %user_repo
+    print >> sys.stderr, "%s should be in the right format <user>:<repo>" %user_repo
     sys.exit()
 
 # Formulate the request url
