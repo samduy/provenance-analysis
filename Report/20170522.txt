@@ -1,0 +1,23 @@
+# Weekly report:
+## Dates: 09-22, May 2017
+-------------------------
+
+## Topic
++ Improve to avoid connection refused from GitHub
+
+## Progress
++ Use PyGithub for better performance: ABORTED (for now).
+=> Documentation is too bad. And it's more complicated than necessary.
+(have to handle classes/objects and so on...We just need some text data).
+
++ Improve to avoid connection refused from GitHub: DONE.
+=> Auto-retry after 5 seconds when received 'limit exceeded',
+=> Auto-retry after 60 seconds when received 'abuse detection' from the server.
+
+## Challenges (or Notes)
+
+## Plan
++ Find alternative sources on Internet for version checking 
++ Find alternative ways to detect software's version on disk
++ Better extraction of program directory name. 
++ Unify github source code into one library.
