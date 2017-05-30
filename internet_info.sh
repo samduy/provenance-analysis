@@ -26,7 +26,7 @@ longest_filepaths=$(grep $dir $file_list | sed -r -n 's,('$dir')/(.*),\2,p' | aw
 userrepos=""
 
 for filepath in $longest_filepaths; do \
-  #sleep 5 # avoid connection refused from Github server
+  sleep 2 # avoid connection refused from Github server
   internet_repos=$(python ./github_filesearch.py $filepath | sort | uniq -u);
   userrepos=$(echo $userrepos $internet_repos);
 done
