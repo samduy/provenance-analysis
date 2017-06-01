@@ -2,6 +2,8 @@
 -------------------------
 
 ## Topic
++ Investigate how extensions in Chrome and Firefox (IE in Windows) are stored.
++ Implement makefile settings for: PIP packages, Browser extentions
 + Compare information of local and internet, extract the result.
 + Integrate: APT check, GIT check, Autotool check
 + Better extraction of program directory name. 
