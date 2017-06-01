@@ -1,25 +1,7 @@
 # Program: PROCERATO - Program Provenance Analysis
 # Author: Duy KHUONG <khuong@eurecom.fr>
 
-APT_PKGNAMES=apt-pkgnames.list
-APT_LST=apt.list
-APT_SO_LST=apt_sorted.list
-ALL_FILES_LST=all_files.list
-INTERESTING_LST=interesting.list
-INTERESTING_DIRS_LST=interesting_dirs.list
-FILES_INFO=files_info.dat
-PROGRAMS_INFO=programs_info.dat
-INTERNET_INFO=internet_info.dat
-
-SCAN_TYPES=(so|sh|py|pyc|rb|jar|apk)
-
-# Specify directories to scan
-ifdef DIR
-SCAN_DIRS=$(DIR)
-else
-SCAN_DIRS="/usr/lib /usr/share /var"
-#SCAN_DIRS="/opt"
-endif
+include setting.mk
 
 .PHONY:clean clean-all
 
