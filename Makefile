@@ -30,7 +30,7 @@ $(INTERESTING_LST): $(APT_SO_LST) $(ALL_FILES_LST)
 
 $(INTERESTING_DIRS_LST): $(INTERESTING_LST)
 	@echo "[-] Extract programs list that not managed by APT"
-	@cat $< | awk -F'/' '{print "/"$$2"/"$$3"/"$$4}' | sort | uniq -d > $@
+	@./extract_package_dirs.sh $< > $@
 
 $(PROGRAMS_INFO): $(INTERESTING_DIRS_LST) $(INTERESTING_LST) 
 	@echo "[-] Extract information of each program"
