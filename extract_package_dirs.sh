@@ -33,7 +33,7 @@ function test {
 #   2. Its direct parent FAILS the test (the parent's files and sub-dirs are from more than one package)
 
 # Process
-full_dirs=$(cat $1 | while read fullpath; do echo ${fullpath%/*}; done | sort | uniq -u)
+full_dirs=$(cat $1 | while read fullpath; do echo $(dirname ${fullpath}); done | sort | uniq)
 
 verified_paths=()
 checked_paths=()
