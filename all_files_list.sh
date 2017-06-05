@@ -8,5 +8,18 @@ if [ $# -eq 0 ]; then
         exit 1
 fi
 
-#find /usr/lib -name "*.so*" -type f
-find $1 -name "*.so" -o -name "*.py" -o -name "*.rb" -o -name "*.pyc" -o -name "*.apk" -o -name "*.jar" -o -name "*.sh" -type f
+scan_dir=$1
+file_types=$2
+
+# Create array of file extensions
+IFS='|' read -r -a array <<< "$file_types"
+
+
+# Formulate the search command
+cmd="find $scan_dir -type f -name \"*.dUmmy\""
+for element in "${array[@]}"
+do cmd="$cmd -o -name \"*.$element\""
+done
+
+# Execute the final search command
+eval $cmd

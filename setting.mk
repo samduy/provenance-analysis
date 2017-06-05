@@ -14,7 +14,7 @@ INTERNET_INFO=internet_info.dat
 
 # File extensions to be scanned
 # .XPI: Firefox add-on file extension (applicable for Linux?)
-SCAN_TYPES=(so|sh|py|pyc|rb|jar|apk|php|js|pl|xpi)
+SCAN_TYPES=so|sh|py|pyc|rb|jar|apk|php|js|pl|xpi
 
 # Specify directories to scan
 ifdef DIR

@@ -18,11 +18,11 @@ $(APT_LST): $(APT_PKGNAMES)
 
 $(ALL_FILES_LST):
 	@echo "[-] List up all files inside $(SCAN_DIRS) directories"
-	@./all_files_list.sh $(SCAN_DIRS) > $@
+	@./all_files_list.sh $(SCAN_DIRS) "$(SCAN_TYPES)" > $@
 
 $(APT_SO_LST): $(APT_LST) 
 	@echo "[-] Filter only specific file types, $(SCAN_TYPES), which were installed by APT"
-	@cat $< | egrep "\.$(SCAN_TYPES)" > $@
+	@cat $< | egrep "\.($(SCAN_TYPES))" > $@
 
 $(INTERESTING_LST): $(APT_SO_LST) $(ALL_FILES_LST)
 	@echo "[-] List up only files that were not installed by APT"
