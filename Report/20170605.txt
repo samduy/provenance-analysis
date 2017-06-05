@@ -1,0 +1,34 @@
+# Report: 23/5-5/6, 2017
+-------------------------
+
+## Topic
++ Implement makefile settings for: PIP packages, Browser extensions
++ Better extraction of program directory name. 
++ Improve search on Github to not miss anything
++ Investigate how extensions in Chrome and Firefox (IE in Windows) are stored.
++ Use other ways to locate files online beside github: NOTDONE
+
+## Progress
++ Implement makefile settings for: PIP packages, Browser extensions: DONE.
+=> Fixed bug with SCAN_TYPES variable. It takes effect now.
+
++ Better extraction of program directory name: DONE.
+=> New algorithm.
+
++ Improve search on Github to not miss anything: DONE.
+=> Combined both repo name search and file search.
+
++ Investigate how extensions in Chrome and Firefox (IE in Windows) are stored.
+=> Firefox on Linux: done
+=> Chrome and Windows: not done.
+
+## Challenges (or Notes)
+
+## Plan
++ Use other ways to locate files online beside github.
++ Search with file hash on GitHub?
++ Compare information of local and internet, extract the result.
++ Integrate: APT check, GIT check, Autotool check
++ Find alternative ways to detect software's version on disk
++ Search for statistic of Github portion in Open-source world.
++ Unify github source code into one library.
