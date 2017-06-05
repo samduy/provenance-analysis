@@ -30,7 +30,10 @@ endif
 PIP_DIR=/usr/local/lib/python2.7/dist-packages
 
 # Firefox add-on directories
-MOZ_EXT_DIR=/usr/lib/mozilla/extentions
-MOZ_PLG_DIR=/usr/lib/mozilla/plugins
+MOZ_EXT_DIR=~/.mozilla/firefox/*/extensions
+MOZ_PLG_DIR=~/.mozilla/firefox/*/plugins
 
 # Chrome extension directory
+
+# Web server directory
+WEB_DIR=/var/www
