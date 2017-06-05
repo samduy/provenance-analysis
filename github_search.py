@@ -50,7 +50,15 @@ TOKEN = load_token_key(TOKEN_FILE)
 
 # Request
 data, error = github_request(url)
-if (category != "code"):
+if (category == "repositories"):
+  for repo in data["items"]:
+    repo_name = repo["name"]
+    repo_full_name = repo["full_name"]
+    owner_name = repo["owner"]["login"]
+    html_url = repo["html_url"]
+    print owner_name+":"+repo_name
+    #print  html_url 
+elif (category != "code"):
   print data
 elif (data):
   for i in data["items"]:
