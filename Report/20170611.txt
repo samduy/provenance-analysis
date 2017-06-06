@@ -1,0 +1,21 @@
+# Report: 6-11/6, 2017
+-------------------------
+
+## Topic
++ Issue #8: improve information extraction of local directory
++ Issue #5: Identify sufficiently unique-looking paths to search for
++ Issue #2: Use other ways to locate files online beside github
++ Compare information of local and internet, extract the result.
+
+## Progress
+
+
+## Challenges (or Notes)
+
+## Plan
++ Search with file hash on GitHub?
++ Integrate auto search for: PIP packages, Browser extensions?
++ Integrate: APT check, GIT check, Autotool check
++ Find alternative ways to detect software's version on disk
++ Search for statistic of Github portion in Open-source world.
++ Unify github source code into one library.
