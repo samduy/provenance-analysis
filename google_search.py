@@ -9,6 +9,7 @@ import urllib
 
 GOOG_URL = 'https://www.googleapis.com'
 SEARCH_URL = GOOG_URL+'/customsearch/v1'
+SID = '017034373173768416011:ioda6vk7d5m' # Custom Search Engine ID
 TOKEN = ''
 TOKEN_FILE = "./token_google"
 NUM = 1
@@ -32,21 +33,16 @@ def google_request(url):
 
 # Load the Google token key from file
 def load_token_key(filename):
-  token = ""
+  key = ""
   # Check token
   try:
-    with open(filename, "r") as f:
-      lines = f.readlines()
-    token += lines[0].strip()+"&"+lines[1].strip()
+    f = open(filename, "r")
+    key = f.read().strip()
   except:
     print >> sys.stderr, "Unable to get token key. Please get the Google API token key for your account and save it in: %s" %filename
     print >> sys.stderr, 'Reference: https://cse.google.com/cse/setup'
     sys.exit()
-
-  if (token.find("key=") < 0) or (token.find("cx=") < 0):
-    print >> sys.stderr, 'The format string in token file should be: \nkey=... \ncx=...'
-    sys.exit()
-  return token
+  return key
 
 ## MAIN
 def main():
@@ -69,7 +65,7 @@ def main():
   TOKEN = load_token_key(TOKEN_FILE)
   
   # Full URL request
-  url = SEARCH_URL+"?"+TOKEN+"&q="+query+"&num="+str(NUM)
+  url = SEARCH_URL+"?cx="+SID+"&key="+TOKEN+"&q="+query+"&num="+str(NUM)
   #print >> sys.stderr, "URL: " + url
 
   # Request
