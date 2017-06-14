@@ -47,7 +47,10 @@ def load_token_key(filename):
 
 # Avoid UnicodeEncodeError
 def ustr(s):
-  return s.encode('ascii', 'ignore')
+  r = ''
+  if s:
+    r = s.encode('ascii', 'ignore')
+  return r
 
 ## MAIN
 # Check arguments
