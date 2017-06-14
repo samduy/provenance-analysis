@@ -15,5 +15,4 @@ if [ ! -f $1 ]; then
 fi
 
 # Process
-#cat $1 | while read line; do dpkg-query -L $line; done | grep "usr/lib/*."
-cat $1 | while read line; do dpkg-query -L $line; done
+cat $1 | while read pkgname; do dpkg-query -l ${pkgname}'*'; done | grep '^ii' | awk '{print $2}' | sort | uniq | while read line; do dpkg-query -L $line; done
