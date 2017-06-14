@@ -83,7 +83,7 @@ if (data):
   rel_tag_name = data[u'tag_name']
   rel_created_date = data[u'created_at']
   rel_published_date = data[u'published_at']
-  result += ",latest_release:"+latest_release+",released_date:"+rel_published_date
+  result += ",latest_release:"+str(latest_release)+",released_date:"+str(rel_published_date)
 else:
   result += ",latest_release:n/a"
   #print "Error: " + error["message"]
