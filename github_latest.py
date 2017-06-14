@@ -45,6 +45,10 @@ def load_token_key(filename):
     sys.exit()
   return 'token '+f.read().strip()
 
+# Avoid UnicodeEncodeError
+def ustr(s):
+  return s.encode('ascii', 'ignore')
+
 ## MAIN
 # Check arguments
 if len(sys.argv) < 2:
@@ -83,7 +87,7 @@ if (data):
   rel_tag_name = data[u'tag_name']
   rel_created_date = data[u'created_at']
   rel_published_date = data[u'published_at']
-  result += ",latest_release:"+str(latest_release)+",released_date:"+str(rel_published_date)
+  result += ",latest_release:"+ustr(latest_release)+",released_date:"+ustr(rel_published_date)
 else:
   result += ",latest_release:n/a"
   #print "Error: " + error["message"]
