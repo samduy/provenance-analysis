@@ -12,9 +12,17 @@ $(APT_PKGNAMES):
 	@echo "[-] List up all packages are currently installed and managed by APT"
 	@./apt_pkglist.sh > $@ 
 
+$(PIP_PKGNAMES): 
+	@echo "[-] List up all packages are currently installed and managed by PIP"
+	@pip freeze 2>$(ERR_LOG) | grep '==' | awk -F'==' '{print $$1}' > $@ 2>$(ERR_LOG) 
+
 $(APT_LST): $(APT_PKGNAMES)
-	@echo "[-] List up all files that are installed by the packages that managed by APT"
-	@./apt_files_list.sh $< > $@
+	@echo "[-] List up all files that are managed by APT"
+	@./apt_files_list.sh $< > $@ 2>$(ERR_LOG)
+
+$(PIP_LST): $(PIP_PKGNAMES)
+	@echo "[-] List up all files that are managed by PIP"
+	@./pip_files_list.sh $< > $@ 2>$(ERR_LOG)
 
 $(ALL_FILES_LST):
 	@echo "[-] List up all files inside $(SCAN_DIRS) directories"
@@ -24,9 +32,13 @@ $(APT_SO_LST): $(APT_LST)
 	@echo "[-] Filter only specific file types, $(SCAN_TYPES), which were installed by APT"
 	@cat $< | egrep "\.($(SCAN_TYPES))" > $@
 
-$(INTERESTING_LST): $(APT_SO_LST) $(ALL_FILES_LST)
-	@echo "[-] List up only files that were not installed by APT"
-	@sort $< $^ | uniq -u > $@
+$(PIP_SO_LST): $(PIP_LST) 
+	@echo "[-] Filter only specific file types, $(SCAN_TYPES), which were installed by PIP"
+	@cat $< | egrep "\.($(SCAN_TYPES))" > $@
+
+$(INTERESTING_LST): $(APT_SO_LST) $(PIP_SO_LST) $(ALL_FILES_LST)
+	@echo "[-] List up only files that are not managed by APT or PIP"
+	@sort $< $^ $(word 2,$^) | uniq -u > $@
 
 $(INTERESTING_DIRS_LST): $(INTERESTING_LST)
 	@echo "[-] Extract programs list that not managed by APT"

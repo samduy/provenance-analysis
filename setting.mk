@@ -3,14 +3,20 @@
 # setting.mk
 
 APT_PKGNAMES=apt-pkgnames.list
+PIP_PKGNAMES=pip-pkgnames.list
 APT_LST=apt.list
+PIP_LST=pip.list
 APT_SO_LST=apt_sorted.list
+PIP_SO_LST=pip_sorted.list
 ALL_FILES_LST=all_files.list
 INTERESTING_LST=interesting.list
 INTERESTING_DIRS_LST=interesting_dirs.list
 FILES_INFO=files_info.dat
 PROGRAMS_INFO=programs_info.dat
 INTERNET_INFO=internet_info.dat
+
+# Error log file
+ERR_LOG=.error.log
 
 # File extensions to be scanned
 # .XPI: Firefox add-on file extension (applicable for Linux?)
