@@ -59,9 +59,10 @@ if [ "${userrepos_filtered}" == "" ]; then
 # when the result found by direct search does not appear in the list of file search
 # all possible results will be printed out. But again, not so certain.
 elif [ "${userrepos_synced}" == "" ]; then
-  for userrepo in ${userrepos_filtered}; do \
-    echo ${dir},$(./github_latest.py ${userrepo}); 
-  done
+#  for userrepo in ${userrepos_filtered}; do \
+#    echo ${dir},$(./github_latest.py ${userrepo}); 
+#  done
+  echo ${dir},"[Need google search]"
 else
 # Life is beautiful! The repo found by direct search also appears in file search result.
   echo ${dir},$(./github_latest.py ${userrepos_synced}); 

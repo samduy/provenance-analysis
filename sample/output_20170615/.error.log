@@ -1,0 +1,41 @@
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Warning: cannot find svn location for chirp===daily-20170124
+find: ‘/usr/lib/python2.7/dist-packages/backports-abc*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/backports.shutil-get-terminal-size*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/backports.ssl-match-hostname*’: No such file or directory
+find: ‘/usr/local/lib/python2.7/dist-packages/CouchDB-1.0-py2.7.egg/CouchDB*’: Not a directory
+find: ‘/usr/lib/python2.7/dist-packages/file-magic*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/fuse-python*’: No such file or directory
+find: ‘2.1,/GeoIP*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/guess-language-spirit*’: No such file or directory
+find: ‘/usr/local/lib/python2.7/dist-packages/ipcalc-1.1.3-py2.7.egg/ipcalc*’: Not a directory
+find: ‘/usr/lib/python2.7/dist-packages/ipython-genutils*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/msgpack-python*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/ndg-httpsclient*’: No such file or directory
+find: ‘/usr/local/lib/python2.7/dist-packages/NoSQLMap-0.5-py2.7.egg/NoSQLMap*’: Not a directory
+find: ‘/usr/local/lib/python2.7/dist-packages/oauthlib-1.1.2-py2.7.egg/oauthlib*’: Not a directory
+find: ‘/usr/local/lib/python2.7/dist-packages/pbkdf2-1.3-py2.7.egg/pbkdf2*’: Not a directory
+find: ‘/usr/lib/python2.7/dist-packages/prompt-toolkit*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/pyasn1-modules*’: No such file or directory
+find: ‘/usr/local/lib/python2.7/dist-packages/pymongo-2.7.2-py2.7-linux-x86_64.egg/pymongo*’: Not a directory
+find: ‘/usr/lib/python2.7/dist-packages/pysnmp-apps*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/pysnmp-mibs*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/python-apt*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/python-dateutil*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/python-debian*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/python-debianbts*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/python-ntlm*’: No such file or directory
+find: ‘/usr/local/lib/python2.7/dist-packages/requests_oauthlib-0.6.2-py2.7.egg/requests-oauthlib*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/requests-toolbelt*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/service-identity*’: No such file or directory
+find: ‘/usr/local/lib/python2.7/dist-packages/tweepy-3.6.0-py2.7.egg/tweepy*’: Not a directory
+find: ‘/usr/local/lib/python2.7/dist-packages/WordHound-0.1-py2.7.egg/WordHound*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/wxPython-common*’: No such file or directory
+find: ‘/usr/lib/python2.7/dist-packages/yara-python*’: No such file or directory
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.

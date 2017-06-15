@@ -1,0 +1,54 @@
+path,github_user,github_repo,latest_release,latest_commit,comitted_date
+/opt/adobe_password_checker,user:cheetz,repo:adobe_password_checker,latest_release:n/a,latest_commit:b8079a73675efc9df6c3c2b72453b3c2bdea3d4d,committed_date:2015-05-05T03:36:16Z
+/opt/backdoorppt,user:r00t-3xp10it,repo:backdoorppt,latest_release:backdoorppt 'Office spoof extensions tool',released_date:2017-01-13T01:04:14Z,latest_commit:f64afc387b42a64e8739fce06cadb39a3df1873f,committed_date:2017-04-14T03:51:33Z
+/opt/beef,user:beefproject,repo:beef,latest_release:n/a,latest_commit:98c187fb38360707eb53ca12cc2bf9d97cd06841,committed_date:2017-06-01T02:24:12Z
+/opt/brutescrape,user:cheetz,repo:brutescrape,latest_release:n/a,latest_commit:c4594b9cd84a6d05e90b603918af3e708c4f92ea,committed_date:2015-02-17T01:48:05Z
+/opt/c2,user:lynaghk,repo:c2,latest_release:n/a,latest_commit:c6b51e47d70c18ee3063c083082c654e0db12b7c,committed_date:2016-03-02T19:11:21Z
+/opt/CMSmap,user:Dionach,repo:CMSmap,latest_release:n/a,latest_commit:37b64be9aacecfe103d400957123ce6cd9f1bd7f,committed_date:2015-04-01T16:40:46Z
+/opt/CrackMapExec,user:byt3bl33d3r,repo:CrackMapExec,latest_release:CrackMapExec v3.1.5,released_date:2016-12-29T08:16:04Z,latest_commit:c9eec77cf819a37346155d50d6fd1ce20c059523,committed_date:2017-05-22T04:37:01Z
+/opt/DC3-MWCP,user:Defense-Cyber-Crime-Center,repo:DC3-MWCP,latest_release:n/a,latest_commit:fe38f8eacc99dfce5b9fb4bf6fa0b63a697529dd,committed_date:2017-04-18T13:18:23Z
+/opt/discover,user:leebaird,repo:discover,latest_release:n/a,latest_commit:19d1f11f1de3497e1ed471f9097dc143c7448844,committed_date:2017-06-06T18:45:50Z
+/opt/Easy-P,user:cheetz,repo:Easy-P,latest_release:n/a,latest_commit:ef41a6e451b63d22a39e467804de436a552e3215,committed_date:2015-03-06T06:53:16Z
+/opt/Empire,user:EmpireProject,repo:Empire,latest_release:2.0 Final Release,released_date:2017-05-15T13:53:29Z,latest_commit:37c72f0428d68edc36d4e19ee3540770ef12d981,committed_date:2017-06-10T03:28:42Z
+/opt/EyeWitness,user:ChrisTruncer,repo:EyeWitness,latest_release:RDP Report uses relative paths,released_date:2016-12-17T18:45:58Z,latest_commit:537d82a011b1691b5d6092cc254ba8e5e3859d4b,committed_date:2017-05-28T03:09:00Z
+/opt/freeradius,user:FreeRADIUS,repo:freeradius-server,latest_release:,released_date:2016-01-25T21:45:10Z,latest_commit:99a2c9e0811880a95b44e6217ddef9fca2a7245f,committed_date:2017-06-14T20:23:22Z
+/opt/gitlist,user:klaussilveira,repo:gitlist,latest_release:n/a,latest_commit:b507e27862bd97a1f7f62d2ec2e525e72c600898,committed_date:2016-10-05T13:51:39Z
+/opt/gitrob,user:michenriksen,repo:gitrob,latest_release:n/a,latest_commit:b6f3278d3da9f5a3213f267da14c2e13402b9ad5,committed_date:2017-04-09T08:35:46Z
+/opt/httpscreenshot,user:breenmachine,repo:httpscreenshot,latest_release:n/a,latest_commit:888faaffd07e5189c9ddfbbdfd4f386ddfe1acd5,committed_date:2017-05-15T11:36:06Z
+/opt/icmpshock,user:cheetz,repo:icmpshock,latest_release:n/a,latest_commit:bc15217c83081bb34a6f5e70b2bef50f205825cf,committed_date:2015-07-13T02:43:49Z
+/opt/jython,user:jythontools,repo:jython,latest_release:n/a,latest_commit:92a64b8f35fd84e61e47062ba48929b51ae88a34,committed_date:2017-06-13T04:31:52Z
+/opt/lmd/maldetect-1.6/files/service,user:kardianos,repo:service,latest_release:n/a,latest_commit:f6635a45eccea31fd54922e3c1bf7e5e5a5df097,committed_date:2017-05-10T19:40:35Z
+/opt/masscan,user:robertdavidgraham,repo:masscan,latest_release:Load libpcap dynamically,released_date:2017-06-06T04:04:16Z,latest_commit:796ee67eae636547678366fb9147a2d5d666668e,committed_date:2017-06-12T00:14:44Z
+/opt/meterssh,user:trustedsec,repo:meterssh,latest_release:n/a,latest_commit:9a5ed19f4d516cc2ecfa174863ddb5f723a81c6a,committed_date:2017-04-13T17:55:03Z
+/opt/net-creds,user:DanMcInerney,repo:net-creds,latest_release:n/a,latest_commit:7a2582dc92971b822f884918acf2952803e49f8a,committed_date:2017-02-13T16:07:03Z
+/opt/NoSQLMap,user:tcstool,repo:NoSQLMap,latest_release:NoSQLMap 0.5,released_date:2016-01-11T14:52:18Z,latest_commit:e49131d1ce99641f829451bf3cb1f466811cfaa1,committed_date:2017-03-26T17:16:01Z
+/opt/NTDSXtract/framework,user:laravel,repo:framework,latest_release:v5.4.26,released_date:2017-06-14T04:12:54Z,latest_commit:bd858cc8b18d26ce00a6c5dbf893c4e4f20d7b9b,committed_date:2017-06-14T04:13:25Z
+/opt/NTDSXtract/ntds/lib,user:stdlib,repo:lib,latest_release:n/a,latest_commit:fbeb6cd570752ab5bb23d924383942403684196d,committed_date:2017-06-14T05:45:45Z
+/opt/paramiko,user:paramiko,repo:paramiko,latest_release:n/a,latest_commit:5bc431b2a69d8e325f00ecf199c6ea76a313b176,committed_date:2017-06-13T20:28:25Z
+/opt/Password_Plus_One,user:cheetz,repo:Password_Plus_One,latest_release:n/a,latest_commit:7e9d98981dca8d2caeaea72a657cfc08add7ad0c,committed_date:2015-02-10T06:24:25Z
+/opt/port-scan-automation,user:nccgroup,repo:port-scan-automation,latest_release:n/a,latest_commit:e2a24d39c60301f6026d17e9571c708733fcdacc,committed_date:2013-05-30T13:35:43Z
+/opt/PowerSploit,user:PowerShellMafia,repo:PowerSploit,latest_release:PowerSploit v3.0.0,released_date:2015-12-19T00:36:33Z,latest_commit:c7985c9bc31e92bb6243c177d7d1d7e68b6f1816,committed_date:2016-12-12T19:09:24Z
+/opt/praedasploit,user:MooseDojo,repo:praedasploit,latest_release:n/a,latest_commit:a869df62d0ac6d31b02c28dd0d36432d53fed4be,committed_date:2014-10-31T21:35:57Z
+/opt/pyinstaller,user:pyinstaller,repo:pyinstaller,latest_release:,released_date:2017-01-15T20:35:30Z,latest_commit:7e814646474efc868206beb8fb9dfe45af527109,committed_date:2017-06-03T08:17:00Z
+/opt/pyinstaller-2.0,user:XizzoR,repo:OS2-AES_RSA_SHA_DS-Project,latest_release:n/a,latest_commit:ed8fea6e2624db37ffd8e114840049338ea885a3,committed_date:2016-11-18T00:07:10Z
+/opt/PyInstaller-2.1,user:w23ta0,repo:pyinsexe,latest_release:n/a,latest_commit:db0b3c304dbe740a0808401b7fa53517ec302a85,committed_date:2014-05-14T15:45:58Z
+/opt/pykek,user:bidord,repo:pykek,latest_release:n/a,latest_commit:651b9bacfe14e6c8c58cd1d2a467d9c9f3c81780,committed_date:2014-12-05T06:36:01Z
+/opt/python-ecdsa,user:warner,repo:python-ecdsa,latest_release:n/a,latest_commit:c877639b55fa0651ecbbcc8b0d01627d25e5e8c3,committed_date:2016-11-18T19:43:21Z
+/opt/radare2,user:radare,repo:radare2,latest_release:r2-1.5 - codename "RubyCup",released_date:2017-05-30T16:51:04Z,latest_commit:cd33acbd515e7b101982fa5bd10ba33ec01b5f37,committed_date:2017-06-14T15:31:57Z
+/opt/rawr,user:rawr,repo:rawr,latest_release:Rawr 1.8.3,released_date:2015-03-23T15:01:09Z,latest_commit:5a90cd28b172d9a4d9ae4426b6c323d40ef52694,committed_date:2015-03-23T14:58:25Z
+/opt/recon-ng,user:anoduck,repo:recon-ng,latest_release:n/a,latest_commit:d1cb68f286b3ad9c84504170134b443506973bf2,committed_date:2015-03-25T20:16:28Z
+/opt/reddit_xss,user:cheetz,repo:reddit_xss,latest_release:n/a,latest_commit:f50847efdf83dfe9efc072a4a2b2a18c6e824b13,committed_date:2015-04-24T01:45:22Z
+/opt/Responder,user:SpiderLabs,repo:Responder,latest_release:n/a,latest_commit:0bdc183093f359054d7a8dd4a6d478e101a5b66f,committed_date:2016-08-25T14:51:33Z
+/opt/SecLists,user:danielmiessler,repo:SecLists,latest_release:,released_date:2016-07-09T21:08:51Z,latest_commit:6e15b1e160a983e75451acd4b15605298589653b,committed_date:2017-05-21T01:09:32Z
+/opt/set,user:fatih,repo:set,latest_release:n/a,latest_commit:27c40922c40b43fe04554d8223a402af3ea333f3,committed_date:2014-12-10T08:48:24Z
+/opt/smbexec,user:pentestgeek,repo:smbexec,latest_release:n/a,latest_commit:782761611a91d3d7141f9753f70d8084642038c4,committed_date:2014-11-19T22:10:54Z
+/opt/sparta,user:Stratio,repo:sparta,latest_release:1.5.0,released_date:2017-05-31T09:56:04Z,latest_commit:36acc94667ffc50d8757536462aa49d0814c466e,committed_date:2017-06-01T15:27:55Z
+/opt/spiderfoot,user:smicallef,repo:spiderfoot,latest_release:n/a,latest_commit:70c60160f7fde65bc81340d93eff76d683532c8b,committed_date:2017-06-11T20:21:21Z
+/opt/sqlmap,user:sqlmapproject,repo:sqlmap,latest_release:1.1,released_date:2017-04-07T13:44:27Z,latest_commit:7dbbf3ecf5f96ab7c6d77b72d8f4789a037af600,committed_date:2017-06-07T21:19:19Z
+/opt/the-backdoor-factory,user:secretsquirrel,repo:the-backdoor-factory,latest_release:n/a,latest_commit:d144cc29e6ee849b072cef3594354814ce13be82,committed_date:2017-05-16T03:08:20Z
+/opt/tweepy,user:tweepy,repo:tweepy,latest_release:3.5.0,released_date:2015-11-20T05:53:19Z,latest_commit:6ac51f3a67cec9fab65fe3839d48eb5bf996d8de,committed_date:2017-05-12T20:45:31Z
+/opt/Veil,user:Veil-Framework,repo:Veil,latest_release:Updated AutoIt Payload,released_date:2017-05-28T02:51:04Z,latest_commit:5caee9a1a77868d755e95d964170dc694c924190,committed_date:2017-06-07T01:34:23Z
+/opt/wifiphisher,user:wifiphisher,repo:wifiphisher,latest_release:wifiphisher v1.3,released_date:2017-04-15T08:40:24Z,latest_commit:889ff13d7c2bdb1507d20e1e10fd93b8ffb2d926,committed_date:2017-06-12T05:47:14Z
+/opt/wifite,user:derv82,repo:wifite,latest_release:n/a,latest_commit:918a499786afdfefcc9582a29df79d0959294ba2,committed_date:2017-05-15T08:53:43Z
+/opt/wordhound,user:kurobeats,repo:wordhound,latest_release:n/a,latest_commit:39839b59a78ad1dddf358a7104500a00a0d34a8f,committed_date:2016-10-04T07:45:54Z
+/opt/wpscan,user:wpscanteam,repo:wpscan,latest_release:2.9.2,released_date:2016-11-15T19:53:14Z,latest_commit:21f4de2ec11486a7160e1817173bf1593a1b74bc,committed_date:2017-05-31T21:16:07Z
