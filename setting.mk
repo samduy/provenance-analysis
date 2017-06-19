@@ -2,6 +2,8 @@
 # Author: Duy KHUONG <khuong@eurecom.fr>
 # setting.mk
 
+SHELL := /bin/bash
+
 APT_PKGNAMES=apt-pkgnames.list
 PIP_PKGNAMES=pip-pkgnames.list
 APT_LST=apt.list

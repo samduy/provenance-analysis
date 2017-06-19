@@ -17,7 +17,7 @@ fi
 # Process
 cat $1 | while read pkgname
 do 
-  pipshow=$(pip show -f ${pkgname} | tail -n +8)
+  pipshow=$(pip show -f ${pkgname} 2> /dev/null | tail -n +8)
   #filepaths=$(echo "${pipshow}" | tail -n +4 | grep -v "Cannot" |sed -r 's/ //g')
   filepaths=$(echo "${pipshow}" | tail -n +4 |sed -r 's/ //g')
   location=$(echo "${pipshow}" | head -1 | awk '{print $2}')

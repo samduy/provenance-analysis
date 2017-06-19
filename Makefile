@@ -14,7 +14,7 @@ $(APT_PKGNAMES):
 
 $(PIP_PKGNAMES):
 	@echo "[-] List up all packages are currently installed and managed by PIP"
-	@pip freeze 2>>$(ERR_LOG) | grep '==' | awk -F'==' '{print $$1}' > $@ 2>>$(ERR_LOG)
+	@pip list --format=legacy 2>>/dev/null | awk '{print $$1}' > $@ 2>>$(ERR_LOG)
 
 $(APT_LST): $(APT_PKGNAMES)
 	@echo "[-] List up all files that are managed by APT"
@@ -30,11 +30,11 @@ $(ALL_FILES_LST):
 
 $(APT_SO_LST): $(APT_LST)
 	@echo "[-] Filter only specific file types, $(SCAN_TYPES), which were installed by APT"
-	@cat $< | egrep "\.($(SCAN_TYPES))" > $@ 2>>$(ERR_LOG)
+	@cat $< | grep -E "\.($(SCAN_TYPES))" > $@ 2>>$(ERR_LOG)
 
 $(PIP_SO_LST): $(PIP_LST)
 	@echo "[-] Filter only specific file types, $(SCAN_TYPES), which were installed by PIP"
-	@cat $< | egrep "\.($(SCAN_TYPES))" > $@ 2>>$(ERR_LOG)
+	@cat $< | grep -E "\.($(SCAN_TYPES))" > $@ 2>>$(ERR_LOG)
 
 $(INTERESTING_LST): $(APT_SO_LST) $(PIP_SO_LST) $(ALL_FILES_LST)
 	@echo "[-] List up only files that are not managed by APT or PIP"
@@ -60,7 +60,7 @@ $(FILES_INFO): $(INTERESTING_LST)
 	@cat $< | while read line; do ./extract_info.sh $$line; done >> $@ 2>>$(ERR_LOG)
 
 clean:
-	rm -f $(FILES_INFO)
+	rm -f *.dat
 
 clean-all: clean
-	rm -f *.list *.dat *.log
+	rm -f *.list *.log
