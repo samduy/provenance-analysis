@@ -18,8 +18,8 @@ IFS='|' read -r -a array <<< "$file_types"
 # Formulate the search command
 cmd="find $scan_dir -type f -name \"*.dUmmy\""
 for element in "${array[@]}"
-do cmd="$cmd -o -name \"*.$element\" 2>/dev/null || true"
+do cmd="$cmd -o -name \"*.$element\""
 done
 
 # Execute the final search command
-eval $cmd
+eval $cmd 2>/dev/null || true
