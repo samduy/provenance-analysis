@@ -8,6 +8,10 @@ include setting.mk
 #all: $(FILES_INFO)
 all: $(PROGRAMS_INFO) $(INTERNET_INFO)
 
+$(GITHUB_TOKEN):
+	@echo "[-] Please enter your GitHub token key:"
+	@read token_key; echo $${token_key} > $@
+
 $(APT_PKGNAMES):
 	@echo "[-] List up all packages are currently installed and managed by APT"
 	@./apt_pkglist.sh > $@ 2>$(ERR_LOG)
@@ -49,7 +53,7 @@ $(PROGRAMS_INFO): $(INTERESTING_DIRS_LST) $(INTERESTING_LST)
 	@echo "path,modified_datetime,modified_datetime_human_readable" > $@
 	@cat $< | while read line; do ./extract_info2.sh $$line $(INTERESTING_LST); done >> $@ 2>>$(ERR_LOG)
 
-$(INTERNET_INFO): $(INTERESTING_DIRS_LST) $(INTERESTING_LST)
+$(INTERNET_INFO): $(INTERESTING_DIRS_LST) $(INTERESTING_LST) $(GITHUB_TOKEN)
 	@echo "[-] Get the latest information of each program from Internet"
 	@echo "path,github_user,github_repo,latest_release,latest_commit,comitted_date" > $@
 	@cat $< | while read line; do ./internet_info.sh $$line $(INTERESTING_LST); done >> $@ 2>>$(ERR_LOG)

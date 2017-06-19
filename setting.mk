@@ -17,6 +17,9 @@ FILES_INFO=files_info.dat
 PROGRAMS_INFO=programs_info.dat
 INTERNET_INFO=internet_info.dat
 
+# Token files
+GITHUB_TOKEN	:= token
+
 # Error log file
 ERR_LOG=.error.log
 
