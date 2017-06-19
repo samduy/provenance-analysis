@@ -63,6 +63,10 @@ $(FILES_INFO): $(INTERESTING_LST)
 	@echo "file_path,MD5sum,Build-ID,Size(bytes),ModifiedTime,ModifiedTime(HumanReadable)" > $@
 	@cat $< | while read line; do ./extract_info.sh $$line; done >> $@ 2>>$(ERR_LOG)
 
+$(REPORT): $(INTERNET_INFO) $(PROGRAMS_INFO)
+	@echo "[-] Generate final report"
+	@./report.py $^ > $@ 2>>$(ERR_LOG)
+	@grep -E --color '^|N ' $@ 
 clean:
 	rm -f *.dat
 
