@@ -65,6 +65,13 @@ You can also view it again in the file named `report` in working directory.
 | /path/to/package5 | Package5 |  Y | 1.0.2 | 1.0.2 | 
 | /path/to/package6| Package6| N | 0.0.2 | 1.0.5 |
 
+## 4. Running log
+
+In case something wrong happens and the analysis stops. You can check the error messages in a file named `.error.log`
+```bash
+$ tail -f .error.log
+```
+
 # Appendix
 ## Program name
 Program Provenance Analysis: PROCERATO
