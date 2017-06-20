@@ -34,8 +34,7 @@ SCAN_TYPES=so|sh|py|pyc|rb|jar|apk|php|js|pl|xpi
 ifdef DIR
 SCAN_DIRS=$(DIR)
 else
-SCAN_DIRS="/usr/lib /usr/share /var"
-#SCAN_DIRS="/opt"
+SCAN_DIRS="/"
 endif
 
 # PIP installed packages directory

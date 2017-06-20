@@ -5,8 +5,7 @@ include setting.mk
 
 .PHONY:clean clean-all
 
-#all: $(FILES_INFO)
-all: $(PROGRAMS_INFO) $(INTERNET_INFO)
+all: $(GITHUB_TOKEN) $(REPORT)
 
 $(GITHUB_TOKEN):
 	@echo "[-] Please enter your GitHub token key:"
