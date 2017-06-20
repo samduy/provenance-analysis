@@ -61,8 +61,14 @@ for row2 in local_info_rdr:
 # Determine result
 for k in result:
   item = result[k]
-  latest_datetime = datetime.strptime(item['committed_date'], DATETIME_FORMAT_IN)
-  local_datetime = datetime.fromtimestamp(int(item['modified_datetime']))
+  try:
+	latest_datetime = datetime.strptime(item['committed_date'], DATETIME_FORMAT_IN)
+  except:
+	latest_datetime = '-'
+  try:
+	local_datetime = datetime.fromtimestamp(int(item['modified_datetime']))
+  except:
+	local_datetime = '-'
 
   # Package name
   item.update({'Package': os.path.basename(k)})
@@ -71,20 +77,33 @@ for k in result:
   item.update({'Source': 'GitHub'})
 
   # Latest updated or not
-  if  latest_datetime > local_datetime:
-    item.update({'Updated':'N'})
-  else:
-    item.update({'Updated':'Y'})
+  try:
+    if latest_datetime > local_datetime:
+      item.update({'Updated':'N'})
+    else:
+      item.update({'Updated':'Y'})
+  except:
+      item.update({'Updated':'-'})
+
 
   # Active development or not
-  if int(latest_datetime.strftime('%s')) < (int(now.strftime('%s')) - int(active_threshold)):
-    item.update({'Active':'N'})
-  else:  
-    item.update({'Active':'Y'})
+  try:
+    if int(latest_datetime.strftime('%s')) < (int(now.strftime('%s')) - int(active_threshold)):
+      item.update({'Active':'N'})
+    else:  
+      item.update({'Active':'Y'})
+  except:
+      item.update({'Active':'-'})
 
   # Version / Date information
-  item.update({'Local': local_datetime.strftime(DATETIME_FORMAT_OUT)})
-  item.update({'Latest': latest_datetime.strftime(DATETIME_FORMAT_OUT)})
+  try:
+    item.update({'Local': local_datetime.strftime(DATETIME_FORMAT_OUT)})
+  except:
+    item.update({'Local': '     -    '})
+  try:
+	item.update({'Latest': latest_datetime.strftime(DATETIME_FORMAT_OUT)})
+  except:
+	item.update({'Latest': '     -    '})
 
 # PRINT RESULT
 if (manualTabulate):
