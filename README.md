@@ -41,6 +41,30 @@ $ make DIR="/home /usr/"
 $ make clean-all
 ```
 
+## 3. View the result
+
+By default, the final result will be printed out at the end of the analysis.
+You can also view it again in the file named `report` in working directory.
+
+### The format of the output result
+#### Manual 
+| Path | Name | Source | Updated | Active | Local version | Latest version | 
+| :--- | :--- | :--- | :--- | :--- | :--- |:--- |
+| /path/to/package1 | Package1 | Github | Y | Y | 1.0.2 | 1.0.2 | 
+| /path/to/package2 | Package2 | Pip | N | Y | 0.0.2 | 1.0.5 |
+
+#### APT 
+| Path | Name |  Updated | Local version | Latest version | 
+| :--- | :--- | :--- | :--- | :--- | 
+| /path/to/package3 | Package3 |  Y | 1.0.2 | 1.0.2 | 
+| /path/to/package4| Package4| N | 0.0.2 | 1.0.5 |
+
+#### PIP
+| Path | Name |  Updated | Local version | Latest version | 
+| :--- | :--- | :--- | :--- | :--- | 
+| /path/to/package5 | Package5 |  Y | 1.0.2 | 1.0.2 | 
+| /path/to/package6| Package6| N | 0.0.2 | 1.0.5 |
+
 # Appendix
 ## Program name
 Program Provenance Analysis: PROCERATO
