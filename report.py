@@ -5,7 +5,12 @@ import csv
 import json
 import os
 from datetime import datetime
-from tabulate import tabulate
+
+manualTabulate = 0
+try:
+  from tabulate import tabulate
+except:
+  manualTabulate = 1
 
 # Some settings
 DATETIME_FORMAT_IN = '%Y-%m-%dT%H:%M:%SZ'
@@ -82,9 +87,37 @@ for k in result:
   item.update({'Latest': latest_datetime.strftime(DATETIME_FORMAT_OUT)})
 
 # PRINT RESULT
-table = []
-for k in result:
-  item = result[k]
-  table.append([k,item['Package'], item['Source'], item['Updated'], item['Active'], item['Local'], item['Latest']])
-
-print tabulate(table, headers=['Path', 'Name', 'Source', 'Updated', 'Active', 'Local', 'Latest'])
+if (manualTabulate):
+  padding = "                              " # 30 chars
+  header =  "|   Path  " + padding[:20]
+  header += "|   Name   " + padding[:10]
+  header += "|   Source   "
+  header += "|   Updated  "
+  header += "|   Active   "
+  header += "|   Local    "
+  header += "|   Latest   "
+  header += "|"
+  print header
+  for k in result:
+    item = result[k]
+    path = k
+    if len(path) >= 27:
+      path = path[:25]+'.'
+    row =  "|  " + path + padding[:27-len(path)]
+    pkgname = item['Package']
+    if len(pkgname) >= 17:
+      pkgname = pkgname[:15]+'.'
+    row += "|   " + pkgname + padding[:17-len(pkgname)]
+    row += "|   " + item['Source']  + padding[:9-len(item['Source'])]
+    row += "|   " + item['Updated'] + padding[:9-len(item['Updated'])]
+    row += "|   " + item['Active']  + padding[:9-len(item['Active'])]
+    row += "| " + item['Local']
+    row += " | " + item['Latest']
+    row += " |"
+    print row
+else: # Use Tabulate to generate nicer table
+  table = []
+  for k in result:
+    item = result[k]
+    table.append([k,item['Package'], item['Source'], item['Updated'], item['Active'], item['Local'], item['Latest']])
+  print tabulate(table, headers=['Path', 'Name', 'Source', 'Updated', 'Active', 'Local', 'Latest'])
