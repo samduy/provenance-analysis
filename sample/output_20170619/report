@@ -1,0 +1,8 @@
+Path                         Name                    Source    Updated    Active    Local       Latest
+---------------------------  ----------------------  --------  ---------  --------  ----------  ----------
+/opt/backdoorppt             backdoorppt             GitHub    N          Y         2017-01-28  2017-06-18
+/opt/CMSmap                  CMSmap                  GitHub    Y          N         2016-03-26  2015-04-01
+/opt/c2                      c2                      GitHub    Y          N         2016-12-25  2016-03-02
+/opt/brutescrape             brutescrape             GitHub    Y          N         2016-03-28  2015-02-17
+/opt/adobe_password_checker  adobe_password_checker  GitHub    Y          N         2016-08-12  2015-05-05
+/opt/beef                    beef                    GitHub    N          Y         2016-03-27  2017-06-18
