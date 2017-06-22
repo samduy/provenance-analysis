@@ -1,0 +1,139 @@
+
+WARNING: apt does not have a stable CLI interface yet. Use with caution in scripts.
+
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/aapocclcgogkmnckokdopfmhonfmgoek: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/aapocclcgogkmnckokdopfmhonfmgoek/0.9_0: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/aapocclcgogkmnckokdopfmhonfmgoek: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/aohghmighlieiainnegkcijnfilokake: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/aohghmighlieiainnegkcijnfilokake/0.9_0: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/aohghmighlieiainnegkcijnfilokake: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/felcaaldnbdncclmgdcncolpebgiejap: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/felcaaldnbdncclmgdcncolpebgiejap/1.1_0: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/felcaaldnbdncclmgdcncolpebgiejap: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.4_0: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi/1.4_1: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/ghbmnnjooekpmoecnnnilnnbdlolhkhi: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/nmmhkkegccagdldgiimedpiccmgmieda: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/nmmhkkegccagdldgiimedpiccmgmieda/1.0.0.2_0: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/nmmhkkegccagdldgiimedpiccmgmieda: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/pkedcjkdefgpdelpbcmbmeomcjbeemfm: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/pkedcjkdefgpdelpbcmbmeomcjbeemfm/5717.116.0.4_0: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/pkedcjkdefgpdelpbcmbmeomcjbeemfm: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/pkedcjkdefgpdelpbcmbmeomcjbeemfm/5717.116.0.4_0: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/pkedcjkdefgpdelpbcmbmeomcjbeemfm/5717.116.0.4_0/cast_setup: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/pkedcjkdefgpdelpbcmbmeomcjbeemfm: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/pkedcjkdefgpdelpbcmbmeomcjbeemfm/5717.116.0.4_0: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/pkedcjkdefgpdelpbcmbmeomcjbeemfm/5717.116.0.4_0: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/pkedcjkdefgpdelpbcmbmeomcjbeemfm/5717.116.0.4_0/cloud_route_details: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/pkedcjkdefgpdelpbcmbmeomcjbeemfm: No such file or directory
+./extract_package_dirs.sh: line 20: cd: 1/Extensions/pkedcjkdefgpdelpbcmbmeomcjbeemfm/5717.116.0.4_0: No such file or directory
+./extract_package_dirs.sh: line 20: cd: Data: No such file or directory
+./extract_package_dirs.sh: line 20: cd: Data/xlzfr6z1.default: No such file or directory
+./extract_package_dirs.sh: line 20: cd: Data: No such file or directory
+./extract_package_dirs.sh: line 20: cd: Data/xlzfr6z1.default/gmp-gmpopenh264: No such file or directory
+./extract_package_dirs.sh: line 20: cd: Data/xlzfr6z1.default/gmp-gmpopenh264/1.5.3: No such file or directory
+./extract_package_dirs.sh: line 20: cd: Data/xlzfr6z1.default: No such file or directory
+./extract_package_dirs.sh: line 20: cd: Data/xlzfr6z1.default/gmp-gmpopenh264: No such file or directory
+./extract_package_dirs.sh: line 20: cd: Data/xlzfr6z1.default: No such file or directory
+./extract_package_dirs.sh: line 20: cd: Data/xlzfr6z1.default/sessionstore-backups: No such file or directory
+./extract_package_dirs.sh: line 20: cd: Data: No such file or directory
+./extract_package_dirs.sh: line 20: cd: Data/xlzfr6z1.default: No such file or directory
+./extract_package_dirs.sh: line 20: cd: (period_2016Fall)_files: No such file or directory
+./extract_package_dirs.sh: line 20: cd: (LO): No such file or directory
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Traceback (most recent call last):
+  File "./github_search.py", line 54, in <module>
+    for repo in data["items"]:
+TypeError: 'NoneType' object has no attribute '__getitem__'
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Traceback (most recent call last):
+  File "./github_search.py", line 54, in <module>
+    for repo in data["items"]:
+TypeError: 'NoneType' object has no attribute '__getitem__'
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: You have triggered an abuse detection mechanism. Please wait a few minutes before you try again. Sleep 60 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+Error: API rate limit exceeded for samduy. Sleep 5 seconds.
+stat: cannot stat ‘/homes/khuong/Desktop/Old’: No such file or directory
+stat: cannot stat ‘/usr/lib/node_modules/phonegap/node_modules/connect-phonegap/node_modules/gaze/test/fixtures/Project’: No such file or directory
