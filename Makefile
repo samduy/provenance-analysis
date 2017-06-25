@@ -45,17 +45,17 @@ $(INTERESTING_LST): $(APT_SO_LST) $(PIP_SO_LST) $(ALL_FILES_LST)
 
 $(INTERESTING_DIRS_LST): $(INTERESTING_LST)
 	@echo "[-] Extract programs list that not managed by APT"
-	@./extract_package_dirs.sh $< > $@ 2>>$(ERR_LOG)
+	@./extract_package_dirs.sh $< $@ 2>>$(ERR_LOG)
 
 $(PROGRAMS_INFO): $(INTERESTING_DIRS_LST) $(INTERESTING_LST)
 	@echo "[-] Extract information of each program"
 	@echo "path,modified_datetime,modified_datetime_human_readable" > $@
-	@cat $< | while read line; do ./extract_info2.sh $$line $(INTERESTING_LST); done >> $@ 2>>$(ERR_LOG)
+	@./program_info_batch.sh $< $(INTERESTING_LST) $@ 2>>$(ERR_LOG)
 
 $(INTERNET_INFO): $(INTERESTING_DIRS_LST) $(INTERESTING_LST) $(GITHUB_TOKEN)
 	@echo "[-] Get the latest information of each program from Internet"
 	@echo "path,github_user,github_repo,latest_release,release_date,latest_commit,committed_date" > $@
-	@cat $< | while read line; do ./internet_info.sh $$line $(INTERESTING_LST); done >> $@ 2>>$(ERR_LOG)
+	@./internet_info_batch.sh $< $(INTERESTING_LST) $@ 2>>$(ERR_LOG)
 
 $(FILES_INFO): $(INTERESTING_LST)
 	@echo "[-] Extract information of each interesting file"

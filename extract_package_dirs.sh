@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Check argument
-if [ $# -eq 0 ]; then
-	echo "Usage $0 <files.list>"
+if [ $# -lt 2 ]; then
+	echo "Usage $0 <files.list> <output>"
 	exit 1
 fi
 
@@ -11,6 +11,15 @@ if [ ! -f $1 ]; then
 	echo "Invalid file."
 	exit 1
 fi
+
+# Remove old file
+if [ -f $2 ]; then
+        rm $2
+fi
+
+input=$1
+output=$2
+touch ${output}
 
 # MAGIC NUMBER! :)
 THRESHOLD=7
@@ -33,12 +42,28 @@ function test {
 #   2. Its direct parent FAILS the test (the parent's files and sub-dirs are from more than one package)
 
 # Process
-full_dirs=$(cat $1 | while read fullpath; do echo $(dirname ${fullpath}); done | sort | uniq)
+#full_dirs=$(cat $1 | while read fullpath; do echo $(dirname ${fullpath}); done | sort | uniq)
+fullpaths=$(cat ${input})
+n=$(echo ${fullpaths} | wc -w)
+tmp=''
+for fullpath in ${fullpaths}
+do
+  count=$((${count}+1))
+  progress=$((100*${count}/n))
+  echo -ne ' Running Step-1...('${progress}'%)\r'
+  tmp=$(echo ${tmp}; echo $(dirname ${fullpath}))
+done
+full_dirs=$(echo ${tmp} | sort | uniq)
 
 verified_paths=()
 checked_paths=()
 
+count=0
+n=$(echo ${full_dirs} | wc -w)
 for path in $full_dirs; do
+  count=$((${count}+1))
+  progress=$((100*${count}/n))
+  echo -ne ' Running Step-2...('${progress}'%)\r'
   parent_path=$(dirname $path)
   parent_test=$(test $parent_path)
   self_test=$(test $path)
@@ -59,7 +84,7 @@ for path in $full_dirs; do
   if [ $self_test == "y" -a $parent_test == "n" ]; then
     if [[ ! "${verified_paths[@]}" =~ "${path}" ]]; then
       verified_paths+=("$path")
-      echo $path
+      echo $path >> ${output}
     fi
     #echo ${verified_paths[${#verified_paths[@]}-2]}
   fi
