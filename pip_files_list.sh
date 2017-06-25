@@ -3,8 +3,8 @@
 # List up all files that are installed and managed by PIP
 
 # Check argument
-if [ $# -eq 0 ]; then
-        echo "Usage $0 <pip_pkgnames_file>"
+if [ $# -lt 2 ]; then
+        echo "Usage $0 <pip_pkgnames_file> <output_file>"
         exit 1
 fi
 
@@ -14,9 +14,24 @@ if [ ! -f $1 ]; then
         exit 1
 fi
 
+# Remove old file
+if [ -f $2 ]; then
+        rm $2
+fi
+
+input=$1
+output=$2
+touch ${output}
+count=0
+
 # Process
-cat $1 | while read pkgname
-do 
+pkgnames=$(cat ${input} | sort | uniq)
+n=$(echo ${pkgnames} | wc -w | awk '{print $1}')
+for pkgname in ${pkgnames}
+do
+  count=$((${count}+1))
+  progress=$((100*${count}/n))
+  echo -ne ' Running...('${progress}'%)\r'
   pipshow=$(pip show -f ${pkgname} 2> /dev/null | tail -n +8)
   #filepaths=$(echo "${pipshow}" | tail -n +4 | grep -v "Cannot" |sed -r 's/ //g')
   filepaths=$(echo "${pipshow}" | tail -n +4 |sed -r 's/ //g')
@@ -28,9 +43,9 @@ do
   for path in ${filepaths}
     do
       if [[ ${path} == *"Cannotlocate"* ]]; then
-	find ${location}/${pkgname}*
+	find ${location}/${pkgname}* >> ${output}
       else
-	echo ${location}/${path}
+	echo ${location}/${path} >> ${output}
       fi
     done
 done

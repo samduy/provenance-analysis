@@ -12,20 +12,20 @@ $(GITHUB_TOKEN):
 	@read token_key; echo $${token_key} > $@
 
 $(APT_PKGNAMES):
-	@echo "[-] List up all packages are currently installed and managed by APT"
-	@./apt_pkglist.sh > $@ 2>$(ERR_LOG)
+	@echo "[-] List up all packages managed by APT"
+	@./apt_pkglist.sh $@ 2>$(ERR_LOG)
 
 $(PIP_PKGNAMES):
-	@echo "[-] List up all packages are currently installed and managed by PIP"
+	@echo "[-] List up all packages managed by PIP"
 	@-pip list --format=legacy 2>>/dev/null | awk '{print $$1}' > $@ 2>>$(ERR_LOG)
 
 $(APT_LST): $(APT_PKGNAMES)
-	@echo "[-] List up all files that are managed by APT"
-	@./apt_files_list.sh $< > $@ 2>>$(ERR_LOG)
+	@echo "[-] List up all files managed by APT"
+	@./apt_files_list.sh $< $@ 2>>$(ERR_LOG)
 
 $(PIP_LST): $(PIP_PKGNAMES)
-	@echo "[-] List up all files that are managed by PIP"
-	@-./pip_files_list.sh $< > $@ 2>>$(ERR_LOG)
+	@echo "[-] List up all files managed by PIP"
+	@-./pip_files_list.sh $< $@ 2>>$(ERR_LOG)
 
 $(ALL_FILES_LST):
 	@echo "[-] List up all files inside $(SCAN_DIRS) directories"
