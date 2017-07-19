@@ -50,20 +50,7 @@ userrepos_filtered=$(for ur in ${userrepos}; do echo ${ur}; done | sort | uniq -
 userrepos_synced=$(echo ${userrepo_direct}; echo ${userrepos_filtered} | sort | uniq -d) 
 #>&2 echo synced:${userrepos_synced}
 
-# if no repositories found by the file search
-if [ "${userrepos_filtered}" == "" ]; then
-  if [ "${userrepo_direct}" != "" ]; then
-    # then the result found by direct search will be used.
-    echo ${dir},$(./github_latest.py ${userrepo_direct}); 
-  fi
-# when the result found by direct search does not appear in the list of file search
-# all possible results will be printed out. But again, not so certain.
-elif [ "${userrepos_synced}" == "" ]; then
-  for userrepo in ${userrepos_filtered}; do \
-    echo ${dir},$(./github_latest.py ${userrepo}); 
-  done
-#  echo ${dir},"[Need google search]"
-else
-# Life is beautiful! The repo found by direct search also appears in file search result.
+# The result is reliable if: repo found by repo-search also appears in file-search results.
+if [ "${userrepos_synced}" != "" ]; then
   echo ${dir},$(./github_latest.py ${userrepos_synced}); 
 fi 
