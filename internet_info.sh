@@ -47,7 +47,7 @@ userrepos_filtered=$(for ur in ${userrepos}; do echo ${ur}; done | sort | uniq -
 
 # Synchronize those results
 # If the result found by direct repository search is also in the list of repos found by file search, it will be the final result.
-userrepos_synced=$(echo ${userrepo_direct}; echo ${userrepos_filtered} | sort | uniq -d) 
+userrepos_synced=$(echo ${userrepo_direct} ${userrepos_filtered} | fmt -w1 | sort | uniq -d)
 >&3 echo synced:${userrepos_synced}
 
 # The result is reliable if: repo found by repo-search also appears in file-search results.
