@@ -26,6 +26,9 @@ GITHUB_TOKEN	:= token
 # Error log file
 ERR_LOG=.error.log
 
+# Debug log file
+DEBUG_LOG=.debug.log
+
 # File extensions to be scanned
 # .XPI: Firefox add-on file extension (applicable for Linux?)
 SCAN_TYPES=so|sh|py|pyc|rb|jar|apk|php|js|pl|xpi

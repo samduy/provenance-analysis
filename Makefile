@@ -79,7 +79,7 @@ $(PROGRAMS_INFO): $(INTERESTING_DIRS_LST) $(INTERESTING_LST)
 $(INTERNET_INFO): $(INTERESTING_DIRS_LST) $(INTERESTING_LST) $(GITHUB_TOKEN)
 	@echo "[$@] Get the latest information of each program from Internet"
 	@echo "path,github_user,github_repo,latest_release,release_date,latest_commit,committed_date" > $@
-	@./internet_info_batch.sh $< $(INTERESTING_LST) $@ 2>>$(ERR_LOG)
+	@./internet_info_batch.sh $< $(INTERESTING_LST) $@ 2>>$(ERR_LOG) 3>>$(DEBUG_LOG)
 	@echo -n "    Count:    "
 	@wc -l $@ | awk '{print $$1}'
 
