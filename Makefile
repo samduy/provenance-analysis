@@ -55,7 +55,9 @@ $(PIP_SO_LST): $(PIP_LST)
 
 $(INTERESTING_LST): $(APT_SO_LST) $(PIP_SO_LST) $(ALL_FILES_LST)
 	@echo "[$@] List up only files that are not managed by APT or PIP"
-	@sort $< $^ $(word 2,$^) | uniq -u > $@ 2>>$(ERR_LOG)
+	@sed -n 's/.py$$/.pyc/p' $(APT_SO_LST) > tmp
+	@sed -n 's/.py$$/.pyc/p' $(PIP_SO_LST) > tmp2
+	@sort $< $^ $(word 2,$^) tmp tmp tmp2 tmp2 | uniq -u > $@ 2>>$(ERR_LOG)
 	@echo -n "    Count:    "
 	@wc -l $@ | awk '{print $$1}'
 
