@@ -55,8 +55,8 @@ for row2 in local_info_rdr:
   if key2 in result:
     # duplicate row handling
     result[key2].update(row2)
-  else:
-    result[key2] = row2
+  #else: #dont care
+  #  result[key2] = row2
 
 # Determine result
 for k in result:
