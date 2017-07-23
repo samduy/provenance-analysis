@@ -69,10 +69,10 @@ $(INTERESTING_DIRS_LST): $(INTERESTING_LST)
 	@echo -ne "					"; echo -n "  Count: "
 	@wc -l $@ | awk '{print $$1}'
 
-$(PROGRAMS_INFO): $(INTERESTING_DIRS_LST) $(INTERESTING_LST)
+$(PROGRAMS_INFO): $(INTERESTING_DIRS_LST)
 	@echo "[$@] Extract information of each program"
-	@echo "path,modified_datetime,modified_datetime_human_readable" > $@
-	@./program_info_batch.sh $< $(INTERESTING_LST) $@ 2>>$(ERR_LOG)
+	@echo "path,modified_date" > $@
+	@./program_info_batch.sh $< $@ 2>>$(ERR_LOG)
 	@echo -ne "					"; echo -n "  Count: "
 	@wc -l $@ | awk '{print $$1}'
 

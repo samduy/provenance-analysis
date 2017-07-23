@@ -66,7 +66,7 @@ for k in result:
   except:
 	latest_datetime = '-'
   try:
-	local_datetime = datetime.fromtimestamp(int(item['modified_datetime']))
+	local_datetime = datetime.strptime(item['modified_date'], DATETIME_FORMAT_OUT)
   except:
 	local_datetime = '-'
 
