@@ -1,21 +1,27 @@
-# Report: 6-11/6, 2017
+# Report: 6/6-15/6, 2017
 -------------------------
 
 ## Topic
-+ Issue #8: improve information extraction of local directory
-+ Issue #5: Identify sufficiently unique-looking paths to search for
-+ Issue #2: Use other ways to locate files online beside github
-+ Compare information of local and internet, extract the result.
++ Use other ways to locate files online beside github
 
 ## Progress
++ Fixed Issues #6, #7, #9: DONE
 
++ Use other ways to locate files online beside github: NOTDONE
+=> For PIP modules: https://pypi.org/project/<package_name>
+=> For others: search with Google
+  1. Search with file path:
+    $ ./google_search '"path/to/file1"+"path/to/file2"'
+  2. Search with file type:
+    $ ./google_search 'package_name filetype:bz2 OR filetype:tar OR filetype:zip'
 
 ## Challenges (or Notes)
 
 ## Plan
++ Compare information of local and internet, extract the result.
++ Separate PIP check to another module (like git, apt)
++ Integrate: APT check, GIT check, Autotool, Pip check
 + Search with file hash on GitHub?
-+ Integrate auto search for: PIP packages, Browser extensions?
-+ Integrate: APT check, GIT check, Autotool check
 + Find alternative ways to detect software's version on disk
 + Search for statistic of Github portion in Open-source world.
 + Unify github source code into one library.

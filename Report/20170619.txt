@@ -1,0 +1,19 @@
+# Report: 16/6-19/6, 2017
+-------------------------
+
+## Topic
++ Support non-root user
++ Compare information of local and internet, extract the result.
++ Separate PIP check to another module (like git, apt)
++ Integrate: APT check, GIT check, Autotool, Pip check
+
+## Progress
+
+
+## Challenges (or Notes)
+
+## Plan
++ Search with file hash on GitHub?
++ Find alternative ways to detect software's version on disk
++ Search for statistic of Github portion in Open-source world.
++ Unify github source code into one library.
