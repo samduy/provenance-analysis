@@ -63,7 +63,7 @@ $(INTERESTING_LST): $(APT_SO_LST) $(PIP_SO_LST) $(ALL_FILES_LST)
 
 $(INTERESTING_DIRS_LST): $(INTERESTING_LST)
 	@echo "[$@] Extract programs list that not managed by APT"
-	@./extract_package_dirs.sh $< tmp 2>>$(ERR_LOG)
+	@./extract_packages.sh $< tmp 2>>$(ERR_LOG)
 	@cat tmp | while read line; do cnt=$$(grep "$$line" $(APT_SO_LST) | wc -l); if [ $$cnt -gt 0 ]; then echo $$line; fi; done > tmp2
 	@sort tmp tmp2 | uniq -u > $@ 2>>$(ERR_LOG)
 	@echo -ne "					"; echo -n "  Count: "
