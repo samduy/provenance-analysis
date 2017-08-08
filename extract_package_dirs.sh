@@ -42,18 +42,7 @@ function test {
 #   2. Its direct parent FAILS the test (the parent's files and sub-dirs are from more than one package)
 
 # Process
-#full_dirs=$(cat $1 | while read fullpath; do echo $(dirname ${fullpath}); done | sort | uniq)
-fullpaths=$(cat ${input})
-n=$(echo ${fullpaths} | wc -w)
-tmp=''
-for fullpath in ${fullpaths}
-do
-  count=$((${count}+1))
-  progress=$((100*${count}/n))
-  echo -ne ' Running Step-1...('${progress}'%)\r'
-  tmp=$(echo ${tmp}; echo $(dirname ${fullpath}))
-done
-full_dirs=$(echo ${tmp} | sort | uniq)
+full_dirs=$(cat ${input} | xargs dirname | sort | uniq)
 
 verified_paths=()
 checked_paths=()
@@ -63,7 +52,7 @@ n=$(echo ${full_dirs} | wc -w)
 for path in $full_dirs; do
   count=$((${count}+1))
   progress=$((100*${count}/n))
-  echo -ne ' Running Step-2...('${progress}'%)\r'
+  echo -ne ' Running...('${progress}'%)\r'
   parent_path=$(dirname $path)
   parent_test=$(test $parent_path)
   self_test=$(test $path)
