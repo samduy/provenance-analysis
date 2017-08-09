@@ -1,0 +1,67 @@
+path,github_user,github_repo,latest_release,release_date,latest_commit,committed_date
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/beef,beefproject,beef,,,50a97d3e369763a43984b40d08a60af70ea61989,2017-08-06T23:28:13Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/BloodHound-linux-x64/resources/app/node_modules/babel-runtime/node_modules/core-js,zloirock,core-js,2.5.0 - 2017.08.05,2017-08-06T14:56:14Z,d26a80471a9fc793652cc92af12538d1043b8b6a,2017-08-08T06:44:08Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/BloodHound-linux-x64/resources/app/node_modules/core-js,zloirock,core-js,2.5.0 - 2017.08.05,2017-08-06T14:56:14Z,d26a80471a9fc793652cc92af12538d1043b8b6a,2017-08-08T06:44:08Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/BloodHound-linux-x64/resources/app/node_modules/dagre,cpettitt,dagre,,2015-07-08T14:00:58Z,e66c29b87efa11e25896f08a20f1d39ef09c26c7,2016-06-06T15:00:34Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/BloodHound-linux-x64/resources/app/node_modules/graphlib,cpettitt,graphlib,,2015-11-23T02:10:00Z,441711d8689840d9aca757b2e9eb282e6ed7a4a1,2016-09-15T13:54:35Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/BloodHound-linux-x64/resources/app/node_modules/iconv-lite,ashtuchkin,iconv-lite,,,637fbc0172247da3b4bf57685dd945b786ca2bee,2017-06-13T15:11:08Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/BloodHound-linux-x64/resources/app/node_modules/linkurious,Linkurious,linkurious.js,,2016-03-30T11:36:51Z,9ac0499cb5be5961d505279b84f09d9936439c8d,2017-02-19T18:11:35Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/CasperJS,casperjs,casperjs,1.1.4-1,2017-04-25T10:27:01Z,a3cd29f6f9b1e6b8a632b55b6ef9e621086cb1c8,2017-07-25T12:51:32Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/CrackMapExec,byt3bl33d3r,CrackMapExec,CrackMapExec v3.1.5,2016-12-29T08:16:04Z,212f0c363b659e40e4ee970835817e7dd1a2c344,2017-07-10T14:27:45Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/discover,leebaird,discover,,,5bddad6e9c2e64572fd2e68ed331a2babea75156,2017-08-06T22:46:42Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/Empire,EmpireProject,Empire,2.0 Final Release,2017-05-15T13:53:29Z,37c72f0428d68edc36d4e19ee3540770ef12d981,2017-06-10T03:28:42Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/EyeWitness,ChrisTruncer,EyeWitness,RDP Report uses relative paths,2016-12-17T18:45:58Z,97fc7a78fa2a805d16e89c489264e263efa19972,2017-08-02T20:32:31Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/gitrob,michenriksen,gitrob,,,b6f3278d3da9f5a3213f267da14c2e13402b9ad5,2017-04-09T08:35:46Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/iadgov/GRASSMARLIN,iadgov,GRASSMARLIN,GRASSMARLIN v3.2.1,2017-06-27T14:41:43Z,2b37b7b5f0a4739932d6bff7eae2b8ac5758ba7b,2017-08-04T12:55:49Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/iadgov/simon-speck-supercop,iadgov,simon-speck-supercop,,,f208925cd805997888d1297bf14f186b1deba61e,2017-07-20T13:44:31Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/iadgov/Splunk-Assessment-of-Mitigation-Implementations,iadgov,Splunk-Assessment-of-Mitigation-Implementations,,,89f5326aa33bcc14e6724a975643b7a3fbeb4963,2016-05-25T22:46:45Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/iadgov/WALKOFF,iadgov,WALKOFF,v0.2.1,2017-07-14T21:35:47Z,c1c9d2cd52bfeb3ab1e76c6404f0c22001fe662c,2017-07-14T21:18:37Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/iadgov/WALKOFF-Apps,iadgov,WALKOFF-Apps,,,99d665b04548e20dd918214c2316d7c87a6fc346,2017-07-25T10:30:52Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/nationalsecurityagency/lemongraph,NationalSecurityAgency,lemongraph,,,fdb9e2687d0db5d2b60077c8e5f48b84d8a62c96,2017-07-07T19:08:02Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/nationalsecurityagency/lemongrenade,NationalSecurityAgency,lemongrenade,,,46bad301a90d8ac007cb00281b76e6d8800dbc92,2016-07-27T18:14:22Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/nationalsecurityagency/qgis-d3datavis-plugin,NationalSecurityAgency,qgis-d3datavis-plugin,,,01b5403158931f90a5aae8f618acdec016882c66,2016-11-30T19:00:54Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/nationalsecurityagency/qgis-shapetools-plugin,NationalSecurityAgency,qgis-shapetools-plugin,,,c004b9d6a818c0797ebe33569a20493d2fe794a9,2017-08-01T19:14:15Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/nbgallery/iruby-dependencies,nbgallery,iruby-dependencies,,,d125ebea440d03539663bb65f0cd4173aa561d25,2017-04-28T02:10:45Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/nbgallery/mypki,nbgallery,mypki,,,e8e517fe3b07d20f730571e42e222f615da9a7e3,2017-03-18T20:49:58Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/nbgallery/nbgallery-extensions,nbgallery,nbgallery-extensions,,,b61c036e0c35894efdc7a647a2e4a23e8b90b4d9,2017-07-13T17:47:32Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/nbgallery/pypki2,nbgallery,pypki2,,,d0758d9712dbfc49ca72c05b1b0b98fa0bda1504,2017-08-04T14:35:13Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/openattestation/OpenAttestation,OpenAttestation,OpenAttestation,OAT v2.3.0 Release,2016-03-18T05:46:14Z,e34fa3be4a4ce199d348f12e62265ec853b4d5fa,2015-12-17T23:29:47Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/redhawksdr/core-framework,RedhawkSDR,core-framework,,,2fb11b6b521ccab5205f049b61403093342d558b,2017-06-23T18:00:03Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/redhawksdr/eclipse-gov.redhawk.codegen,RedhawkSDR,eclipse-gov.redhawk.codegen,,,b5a9b1543aa6fad12f512133c7905704f64b414d,2017-07-27T17:40:41Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/redhawksdr/eclipse-gov.redhawk.core,RedhawkSDR,eclipse-gov.redhawk.core,,,7a487207c9a1fe93548cc3729d71c89e4fbcd8d0,2017-08-02T16:17:19Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/redhawksdr/eclipse-gov.redhawk.ide,RedhawkSDR,eclipse-gov.redhawk.ide,,,e466673ec284cbfd8cb3537999ac83f70b5d7547,2017-07-21T14:48:09Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/redhawksdr/eclipse-mil.jpeojtrs.sca,RedhawkSDR,eclipse-mil.jpeojtrs.sca,,,d8206ae65acd7fc9cdc0247388133572b8231e4e,2017-08-02T16:15:50Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/redhawksdr/eclipse-products-gov.redhawk.ide.product,RedhawkSDR,eclipse-products-gov.redhawk.ide.product,REDHAWK IDE 2.0.1,2016-04-20T22:59:05Z,68483679a5b4b2060ced4d36f221f70cdc49e6cd,2017-08-02T16:42:53Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/redhawksdr/framework-core,RedhawkSDR,framework-core,,,dd64bc30f7d573a150124d81e18849a6b870ecd6,2016-09-26T16:28:23Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/redhawksdr/framework-GPP,RedhawkSDR,framework-GPP,,,0ff7e23204b966b830224777c10aeedde8122779,2016-09-21T11:43:07Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/redhawksdr/frontendInterfaces,RedhawkSDR,frontendInterfaces,,,6dc0dd36c036fa2912da24775d343e13eb2891b9,2016-09-09T18:18:54Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/redhawksdr/integration-gnuhawk,RedhawkSDR,integration-gnuhawk,,,a29b5452aa5c70141a30f7c9dd1003ccc8613a6b,2014-08-20T19:14:18Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/redhawksdr/rtl-demo-app,RedhawkSDR,rtl-demo-app,,,1741017c2e5a8415e8be9aa2c7a00a37e92a58d2,2015-01-09T16:33:53Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/redhawksdr/rtl-demo-client,RedhawkSDR,rtl-demo-client,,,c0f6c6491ea4508bdb848b8098f6276d2bb732f2,2015-01-08T21:42:54Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/redhawksdr/SigGen,RedhawkSDR,SigGen,,,3b86ee3c6a7cd23895df8e32dcd803260b691218,2017-06-21T20:22:34Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/nsa/SELinuxProject/selinux/mcstrans,joenall,mcstrans,,,65c0fc27945f84a0c45e65f43b48917f68d6b439,2010-07-19T21:03:14Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/recon-ng,anoduck,recon-ng,,,d1cb68f286b3ad9c84504170134b443506973bf2,2015-03-25T20:16:28Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/SecLists,danielmiessler,SecLists,,2016-07-09T21:08:51Z,43e28e38957f456cac37d29e6596284cd7c88f90,2017-06-28T18:54:38Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/the-backdoor-factory,secretsquirrel,the-backdoor-factory,,,87bd28d7a30e26d0bc01270bdd492cd8977a4f2e,2017-08-02T19:04:19Z
+/lib/live/mount/persistence/mmcblk0p3/nis/opt/wpscan,wpscanteam,wpscan,2.9.3,2017-07-19T13:25:46Z,872bbdb8e0c543ea676521f22593c4fa8e77f4b3,2017-08-01T16:19:03Z
+/lib/live/mount/persistence/mmcblk0p3/nis/workspace/2017-Spring-41/non-root/provenance-analysis,samduy,provenance-analysis,,,0a0f640375f5850f4bc2803b7379757c2c38b610,2017-08-09T07:08:17Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-acunetix,dradis,dradis-acunetix,,,30018a6f305fe1ea4c34dfc041c593eac04073b3,2017-07-26T20:00:36Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-brakeman,dradis,dradis-brakeman,,,04115f39c5a0bb9d2117d4c38c306b3797dac7a5,2017-07-26T20:03:20Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-burp,dradis,dradis-burp,,,71cb7cbefb4a3965ac600c15e2027f0a64ad44a1,2017-07-26T19:56:20Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-calculator_cvss,dradis,dradis-calculator_cvss,,,e26dd58c08f8cbda98e6bf4186f32c095b1bc422,2017-07-19T08:36:06Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-csv,dradis,dradis-csv,,,ab54ecfeffa3c0e2d5a5d9addc062d84e7664350,2017-07-26T20:51:29Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-html_export,dradis,dradis-html_export,,,7b7b11f09306a2d08c21dac26ab56f0319586791,2017-07-26T20:53:27Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-mediawiki,dradis,dradis-mediawiki,,,be109a269c7090f321196e640acbd6aa5317f395,2017-08-04T12:53:43Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-metasploit,dradis,dradis-metasploit,,,842aa3b357f2766f848b0f4d4d524025f0c7b8a2,2017-07-26T20:57:33Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-nessus,dradis,dradis-nessus,,,82baaa0cf34b856bf5a1caee2f1ffaf9c4ba6451,2017-07-26T21:00:58Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-nexpose,dradis,dradis-nexpose,,,12e0bcd46b271fc2b2b93459b072ea8f83daa856,2017-07-27T04:50:17Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-nikto,dradis,dradis-nikto,,,9613d6de945395fe5c0bea0878e0b97031a08cf0,2017-07-27T04:50:48Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-nmap,dradis,dradis-nmap,,,e03ead3de35e6fccbbd2db18990dae18825ca6c4,2017-07-27T04:53:24Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-ntospider,dradis,dradis-ntospider,,,5077a346d874d107ba0c293867a3ea2c231f5812,2017-07-27T04:56:59Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-openvas,dradis,dradis-openvas,,,727b5512008f96fa3ec23a80bd0ccdbe8cbb6a8d,2017-07-27T05:00:02Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-plugins,dradis,dradis-plugins,,,17c88baa70661fb7e9b7e43b0abbf444dc1f80f9,2017-07-13T10:39:23Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis-qualys,dradis,dradis-qualys,,,c8d566762adb268ac9be46087923a56ee748db9b,2017-07-27T05:16:50Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/lib/dradis/vendor/bundle/ruby/2.3.0/gems/rack-protection-1.5.3,Bivek,rack-protection-1.5.3,,,533ea0a9ec751cc58481b1cda71e0e2f125a2cf3,2017-03-25T04:28:11Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/share/deblaze/pyamf,hydralabs,pyamf,,2015-12-17T14:22:57Z,d13915dfc68d06eb69ffc3e4e2a23257383568cc,2015-12-17T07:08:41Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/share/doc/ruby-atomic,headius,ruby-atomic,,,e4c9c4059df43519c315c86fff6e10d65f2a3b61,2014-06-06T22:12:40Z
+/lib/live/mount/rootfs/filesystem.squashfs/usr/share/recon-ng,anoduck,recon-ng,,,d1cb68f286b3ad9c84504170134b443506973bf2,2015-03-25T20:16:28Z
