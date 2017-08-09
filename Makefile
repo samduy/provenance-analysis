@@ -95,7 +95,7 @@ $(REPORT): $(INTERNET_INFO) $(PROGRAMS_INFO)
 	@./report.py $^ > $@ 2>>$(ERR_LOG)
 	@grep -E --color '^|N ' $@ 
 clean:
-	rm -f *.dat
+	rm -f *.dat report
 
 clean-all: clean
 	rm -f *.list *.log
