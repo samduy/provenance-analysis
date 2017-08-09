@@ -94,6 +94,8 @@ $(REPORT): $(INTERNET_INFO) $(PROGRAMS_INFO)
 	@echo "[$@] Generate final report"
 	@./report.py $^ > $@ 2>>$(ERR_LOG)
 	@grep -E --color '^|N ' $@ 
+	@echo -ne "					"; echo -n "  Count: "
+	@wc -l $@ | awk '{print $$1}'
 clean:
 	rm -f *.dat report
 

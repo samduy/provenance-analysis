@@ -107,9 +107,9 @@ for k in result:
 
 # PRINT RESULT
 if (manualTabulate):
-  padding = "                              " # 30 chars
-  header =  "|   Path  " + padding[:20]
-  header += "|   Name   " + padding[:10]
+  padding = "                                        " # 40 chars
+  header =  "|   Path  " + padding[:30]
+  header += "|   Name   " + padding[:20]
   header += "|   Source   "
   header += "|   Updated  "
   header += "|   Active   "
@@ -120,13 +120,13 @@ if (manualTabulate):
   for k in result:
     item = result[k]
     path = k
-    if len(path) >= 27:
-      path = path[:25]+'.'
-    row =  "|  " + path + padding[:27-len(path)]
-    pkgname = item['Package']
-    if len(pkgname) >= 17:
-      pkgname = pkgname[:15]+'.'
-    row += "|   " + pkgname + padding[:17-len(pkgname)]
+    if len(path) >= 37:
+      path = path[:6]+'..'+path[-26:]
+    row =  "|  " + path + padding[:37-len(path)]
+    pkgname = item['github_user']+":"+item['github_repo']
+    if len(pkgname) >= 27:
+      pkgname = pkgname[:24]+'..'
+    row += "|   " + pkgname + padding[:27-len(pkgname)]
     row += "|   " + item['Source']  + padding[:9-len(item['Source'])]
     row += "|   " + item['Updated'] + padding[:9-len(item['Updated'])]
     row += "|   " + item['Active']  + padding[:9-len(item['Active'])]
