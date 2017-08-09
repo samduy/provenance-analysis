@@ -14,11 +14,11 @@ file_types=$2
 # Create array of file extensions
 IFS='|' read -r -a array <<< "$file_types"
 
-
 # Formulate the search command
-cmd="find $scan_dir -type f -name \"*.dUmmy\""
+cmd="find $scan_dir -type f"
+cmd+=" -name \"README*\" -o -name \"VERSION*\" -o -name \"HISTORY*\" -o -name \"LICENSE*\""
 for element in "${array[@]}"
-do cmd="$cmd -o -name \"*.$element\""
+do cmd+=" -o -name \"*.$element\""
 done
 
 # Execute the final search command
