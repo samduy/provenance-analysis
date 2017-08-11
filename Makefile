@@ -100,4 +100,4 @@ clean:
 	rm -f *.dat report
 
 clean-all: clean
-	rm -f *.list *.log
+	rm -f *.list .*.log
