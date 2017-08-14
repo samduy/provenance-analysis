@@ -97,7 +97,7 @@ $(REPORT): $(INTERNET_INFO) $(PROGRAMS_INFO)
 	@echo -ne "					"; echo -n "  Count: "
 	@wc -l $@ | awk '{print $$1}'
 clean:
-	rm -f *.dat report
+	rm -f *.dat report .*.cache
 
 clean-all: clean
 	rm -f *.list .*.log
