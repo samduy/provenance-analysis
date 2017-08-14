@@ -69,6 +69,6 @@ do
 done
 
 # output final result
-cat ${CACHE_DAT} >> ${output}
+cat ${CACHE_DAT} >> ${output} &&
 #remove cache files
-rm ${CACHE_CNT} ${$CACHE_DAT}
+rm ${CACHE_CNT} ${CACHE_DAT}
