@@ -106,7 +106,47 @@ for k in result:
 	item.update({'Latest': '     -    '})
 
 # PRINT RESULT
-if (manualTabulate):
+if (True):
+# Pre-define table
+  htmlFile = "<!DOCTYPE html>"
+  htmlFile += "<html>"
+  htmlStyle = "<style>"
+  htmlStyle += "table, th, td {border: 1px solid black; border-collapse: collapse;}"
+  htmlStyle += "th, td {padding: 5px;}"
+  htmlStyle += "</style>"
+  htmlFile += "<head>" + htmlStyle + "</head>"
+  htmlFile += "<body>"
+  htmlTable = "<table style='width:90%; align:center'>"
+  # First row, header row
+  firstRow ="<tr>"
+  cols = ["#", "Path", "Name", "Source", "Updated", "Active", "Local date", "Latest release date"]
+  for c in cols:
+    firstRow += "<th>" + c + "</th>"
+  firstRow += "</tr>"
+  # end first row
+  Rows = ""
+  cnt = 0
+  for k in result:
+    row = "<tr>"
+    item = result[k]
+    path = k
+    pkgname = item['github_user']+":"+item['github_repo']
+    row =  "<td align='center'>" + str(cnt) + "</td>"
+    row +=  "<td>" + path + "</td>"
+    row += "<td>" + pkgname + "</td>"
+    row += '<td><a href="http://www.github.com/' + item['github_user'] + '/' + item['github_repo'] + '" target="_blank">'+ item['Source'] + '</a></td>'
+    row += '<td align="center">' + item['Updated'] + '</td>'
+    row += "<td align='center'>" + item['Active'] + "</td>"
+    row += "<td align='center'>" + item['Local'] + "</td>"
+    row += "<td align='center'>" + item['Latest'] + "</td>"
+    row += "</tr>"
+    Rows += row
+    cnt += 1
+  htmlTable += firstRow + Rows + "</table>"
+  htmlFile += htmlTable + "</body></html>"
+  print htmlFile
+
+elif (manualTabulate):
   padding = "                                        " # 40 chars
   header =  "|   Path  " + padding[:30]
   header += "|   Name   " + padding[:20]
