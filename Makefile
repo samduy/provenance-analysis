@@ -95,7 +95,7 @@ $(REPORT): $(INTERNET_INFO) $(PROGRAMS_INFO)
 	@./report.py $^ > $@ 2>>$(ERR_LOG)
 	@echo "Report is stored at ./$@"
 clean:
-	rm -f *.dat report .*.cache
+	rm -f $(REPORT) $(INTERNET_INFO) $(PROGRAMS_INFO) .*.cache
 
 clean-all: clean
-	rm -f *.list .*.log
+	rm -f *.list .*.log *tmp*
