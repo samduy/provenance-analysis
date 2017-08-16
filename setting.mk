@@ -18,7 +18,7 @@ PROGRAMS_INFO=programs_info.dat
 INTERNET_INFO=internet_info.dat
 
 # Final report
-REPORT	:= report.html
+REPORT	:= report.xml
 
 # Token files
 GITHUB_TOKEN	:= token

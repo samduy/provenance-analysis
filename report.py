@@ -6,11 +6,28 @@ import json
 import os
 from datetime import datetime
 
-manualTabulate = 0
-try:
-  from tabulate import tabulate
-except:
-  manualTabulate = 1
+# Export format
+TXT	    = 0
+TABULATE    = 1
+HTML	    = 2
+XML	    = 3
+
+# Choose a format
+exportType = XML
+
+# Check if the module available
+# Otherwise, use the alternative
+if (exportType == TABULATE):
+  try:
+    from tabulate import tabulate
+  except:
+    exportType = TXT
+
+if (exportType == XML):
+  try:
+    from dicttoxml import dicttoxml
+  except:
+    exportType = HTML
 
 # Some settings
 DATETIME_FORMAT_IN = '%Y-%m-%dT%H:%M:%SZ'
@@ -106,7 +123,16 @@ for k in result:
 	item.update({'Latest': '     -    '})
 
 # PRINT RESULT
-if (True):
+if (exportType == XML):
+  xmlContent = dicttoxml(result, custom_root='packages', attr_type=False)
+  # append XSL style into XML
+  xslTag = '<?xml-stylesheet type="text/xsl" href="style.xsl" ?>'
+  idx = xmlContent.find("<packages>")
+  xmlWithXSL = xmlContent[0:idx] + xslTag + xmlContent[idx:]
+  print xmlWithXSL
+
+# HTML export
+elif (exportType == HTML):
 # Pre-define table
   htmlFile = "<!DOCTYPE html>"
   htmlFile += "<html>"
@@ -146,7 +172,8 @@ if (True):
   htmlFile += htmlTable + "</body></html>"
   print htmlFile
 
-elif (manualTabulate):
+# Plain TXT export
+elif (exportType == TXT):
   padding = "                                        " # 40 chars
   header =  "|   Path  " + padding[:30]
   header += "|   Name   " + padding[:20]
