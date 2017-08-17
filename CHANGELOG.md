@@ -1,4 +1,9 @@
 ## Changelog
+##### v0.5 - 2017-08-17
+* #27: Able to resume after being interrupted.
+* #28: Report displayed in HTML/XML for better 
+view and interaction
+
 ##### v0.4 - 2017-08-09
 * Fixed issue #26.
 * Improved issue #25: New algorithm to extract package directory.
