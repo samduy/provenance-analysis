@@ -2,13 +2,13 @@
 
 # Check argument
 if [ ! $# -eq 2 ]; then
-	echo "Usage $0 <dir> <files_list>"
+	>&2 echo "Usage $0 <dir> <files_list>"
 	exit 1
 fi
 
 # Check file
 if [ ! -f $2 ]; then
-	echo "Invalid file: $2"
+	>&2 echo "Invalid file: $2"
 	exit 1
 fi
 

@@ -4,7 +4,7 @@
 
 # Check argument
 if [ $# -lt 2 ]; then
-        echo "Usage $0 \"<dir1> <dir2> ...\" \"<type1|type2|...>\""
+        >&2 echo "Usage $0 \"<dir1> <dir2> ...\" \"<type1|type2|...>\""
         exit 1
 fi
 

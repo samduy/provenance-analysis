@@ -2,7 +2,7 @@
 
 # Check argument
 if [ $# -eq 0 ]; then
-  echo "Usage: $0 <directory to scan>"
+  >&2 echo "Usage: $0 <directory to scan>"
   exit 1
 fi
 

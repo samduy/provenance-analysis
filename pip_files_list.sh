@@ -4,13 +4,13 @@
 
 # Check argument
 if [ $# -lt 2 ]; then
-        echo "Usage $0 <pip_pkgnames_file> <output_file>"
+        >&2 echo "Usage $0 <pip_pkgnames_file> <output_file>"
         exit 1
 fi
 
 # Check file
 if [ ! -f $1 ]; then
-        echo "Invalid file."
+        >&2 echo "Invalid file."
         exit 1
 fi
 

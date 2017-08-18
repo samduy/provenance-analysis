@@ -2,25 +2,25 @@
 
 # Check argument
 if [ $# -lt 3 ]; then
-        echo "Usage $0 <interesting_dir_list> <interesting_files_list> <output_file>"
+        >&2 echo "Usage $0 <interesting_dir_list> <interesting_files_list> <output_file>"
         exit 1
 fi
 
 # Check file
 if [ ! -f $1 ]; then
-        echo "Invalid file: $1"
+        >&2 echo "Invalid file: $1"
         exit 1
 fi
 
 # Check file
 if [ ! -f $2 ]; then
-        echo "Invalid file: $2"
+        >&2 echo "Invalid file: $2"
         exit 1
 fi
 
 # Check file
 if [ ! -f $3 ]; then
-        echo "Invalid file: $3"
+        >&2 echo "Invalid file: $3"
         exit 1
 fi
 

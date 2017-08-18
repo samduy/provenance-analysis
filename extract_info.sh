@@ -2,13 +2,13 @@
 
 # Check argument
 if [ $# -eq 0 ]; then
-	echo "Usage $0 <binary_file>"
+	>&2 echo "Usage $0 <binary_file>"
 	exit 1
 fi
 
 # Check file
 if [ ! -f $1 ]; then
-	echo "Invalid file."
+	>&2 echo "Invalid file."
 	exit 1
 fi
 

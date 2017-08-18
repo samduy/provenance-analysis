@@ -2,7 +2,7 @@
 
 # Check argument
 if [ $# -lt 1 ]; then
-        echo "Usage $0 <output_file>"
+        >&2 echo "Usage $0 <output_file>"
         exit 1
 fi
 
