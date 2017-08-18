@@ -5,10 +5,10 @@
 </script>
 </head>
   <body style="font-family:Arial;font-size:8pt;background-color:#EEEEEE">
-    <div onclick="javascript:showhide('github');" title="Click to Expand/Collapse"><h2>GitHub Open source</h2>
+    <div onclick="javascript:showhide('github');" title="Click to Expand/Collapse"><h2>Open sources require manual update</h2>
     </div>
     <div align="center">
-    <table id="github" style='width:90%; align:center; border-collapse: collapse;'>
+    <table id="github" style='width:90%; border-collapse: collapse;'>
       <tr>
        <th title="Click to sort" onclick="sortTable('github', 0)">Package name</th>
        <th title="Click to sort" onclick="sortTable('github', 1)">GitHub user</th>
@@ -19,7 +19,7 @@
        <th title="Click to sort" onclick="sortTable('github', 6)">Local modified date</th>
        <th title="Click to sort" onclick="sortTable('github', 7)">Latest release date</th>
       </tr>
-    <xsl:for-each select="packages/key">
+    <xsl:for-each select="document(/list/entry/@name)//packages/key">
       <tr>
       <td>
       <div style="background-color:teal;color:white;padding:4px">
@@ -55,6 +55,52 @@
       <td style="padding:0 15px" align="center"><xsl:value-of select="Active"/></td>
       <td style="padding:0 15px" align="center"><xsl:value-of select="Local"/></td>
       <td style="padding:0 15px" align="center"><xsl:value-of select="Latest"/></td>
+      </tr>
+    </xsl:for-each>
+    </table></div>
+    <div onclick="javascript:showhide('git');" title="Click to Expand/Collapse"><h2>Local git repositories</h2>
+    </div>
+    <div align="center">
+    <table id="git" style='width:90%; border-collapse: collapse;'>
+      <tr>
+       <th title="Click to sort" onclick="sortTable('git', 0)">Package name</th>
+       <th title="Click to sort" onclick="sortTable('git', 1)">URL</th>
+       <th title="Click to sort" onclick="sortTable('git', 2)">Source</th>
+       <!--<th title="Click to sort" onclick="sortTable('git', 3)">Updated ? (Yes/No)</th>
+       <th title="Click to sort" onclick="sortTable('git', 4)">Active ? (Yes/No)</th>-->
+       <th title="Click to sort" onclick="sortTable('git', 5)">Local commit</th>
+       <th title="Click to sort" onclick="sortTable('git', 6)">Latest tagt</th>
+      </tr>
+    <xsl:for-each select="document(/list/entry/@name)//git/key">
+      <tr>
+      <td>
+      <div style="background-color:teal;color:white;padding:4px">
+	<xsl:attribute name="title">Click to view full directory path.</xsl:attribute>
+	<xsl:attribute name="onclick">
+	  javascript:showhide('id2-<xsl:value-of select="Package" />');
+	</xsl:attribute>
+        <span style="font-weight:bold"><xsl:value-of select="Package"/></span>
+      </div>
+      <div style="display:none">
+	<xsl:attribute name="id">id2-<xsl:value-of select="Package" /></xsl:attribute>
+	Directory path: 
+	<a target="_blank">
+	  <xsl:attribute name="href">file://<xsl:value-of select="@name"/></xsl:attribute>
+	  <xsl:value-of select="@name"/>
+	</a>
+      </div>
+      </td>
+      <td><a target="_blank">
+	<xsl:attribute name="href">
+	  <xsl:value-of select="url"/>
+	</xsl:attribute>
+	<xsl:value-of select="url"/>
+      </a></td>
+      <td style="padding:0 15px" align="center"><xsl:value-of select="Source"/></td>
+      <!--<td style="padding:0 15px" align="center"><xsl:value-of select="Updated"/></td>
+      <td style="padding:0 15px" align="center"><xsl:value-of select="Active"/></td>-->
+      <td style="padding:0 15px" align="center"><xsl:value-of select="head"/></td>
+      <td style="padding:0 15px" align="center"><xsl:value-of select="latest_tag"/></td>
       </tr>
     </xsl:for-each>
     </table></div>

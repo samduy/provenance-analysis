@@ -5,6 +5,7 @@ import csv
 import json
 import os
 from datetime import datetime
+from urlparse import urlparse
 
 # Export format
 TXT	    = 0
@@ -29,6 +30,11 @@ if (exportType == XML):
   except:
     exportType = HTML
 
+# define output files
+if (exportType == XML):
+  GITXML_FILE = "git.xml"
+  XML_FILE = "github.xml"
+
 # Some settings
 DATETIME_FORMAT_IN = '%Y-%m-%dT%H:%M:%SZ'
 DATETIME_FORMAT_OUT = '%Y-%m-%d'
@@ -39,26 +45,34 @@ today = now.day
 # Variables
 INTERNET_RAW_FILE = ''
 LOCAL_RAW_FILE = ''
+GIT_RAW_FILE = ''
+
+def getSource(url):
+  parsed_uri = urlparse(url)
+  return parsed_uri.netloc
 
 ## MAIN
 # Check arguments
-if len(sys.argv) < 3:
-  print >> sys.stderr, "Usage: %s <internet_info.dat> <local_info.dat>" %sys.argv[0]
+if len(sys.argv) < 4:
+  print >> sys.stderr, "Usage: %s <internet_info.dat> <local_info.dat> <git_info.dat>" %sys.argv[0]
   sys.exit()
 else:
   INTERNET_RAW_FILE = str(sys.argv[1])
   LOCAL_RAW_FILE = str(sys.argv[2])
+  GIT_RAW_FILE = str(sys.argv[3])
 
 # Load raw data
 try:
   internet_info_rdr = csv.DictReader(open(INTERNET_RAW_FILE))
   local_info_rdr = csv.DictReader(open(LOCAL_RAW_FILE))
+  git_info_rdr = csv.DictReader(open(GIT_RAW_FILE))
 except:
   print >> sys.stderr, "Error: Invalid raw data files."
   sys.exit()
 
 # Process data
 result = {}
+result_git = {}
 
 for row in internet_info_rdr:
   key = row.pop('path')
@@ -74,6 +88,14 @@ for row2 in local_info_rdr:
     result[key2].update(row2)
   #else: #dont care
   #  result[key2] = row2
+
+# GIT repositories in local
+for repo in git_info_rdr:
+  key = repo.pop('path')
+  if key in result:
+    # duplicate row handling
+    pass
+  result_git[key] = repo
 
 # Determine result
 for k in result:
@@ -122,14 +144,41 @@ for k in result:
   except:
 	item.update({'Latest': '     -    '})
 
+# Process data ot local GIT info
+for g in result_git:
+  item = result_git[g]
+
+  # Package name
+  item.update({'Package': os.path.basename(g)})
+
+  # Source
+  source = getSource(item['url'])
+  item.update({'Source': source})
+
 # PRINT RESULT
 if (exportType == XML):
-  xmlContent = dicttoxml(result, custom_root='packages', attr_type=False)
-  # append XSL style into XML
-  xslTag = '<?xml-stylesheet type="text/xsl" href="style.xsl" ?>'
-  idx = xmlContent.find("<packages>")
-  xmlWithXSL = xmlContent[0:idx] + xslTag + xmlContent[idx:]
-  print xmlWithXSL
+  # GITHUB content
+  f = open (XML_FILE, "w")
+  xmlGithub = dicttoxml(result, custom_root='packages', attr_type=False)
+  f.write(xmlGithub)
+  f.close()
+
+  # GIT content
+  f1 = open(GITXML_FILE, "w")
+  xmlGit = dicttoxml(result_git, custom_root='git', attr_type=False)
+  f1.write(xmlGit)
+  f1.close()
+
+  # Main XML file
+  xmlContent = '<?xml version="1.0" encoding="UTF-8" ?>'
+  xmlContent += '<?xml-stylesheet type="text/xsl" href="style.xsl"?>'
+  xmlContent += '<list>'
+  xmlContent += '<entry name="' + XML_FILE + '" />'
+  xmlContent += '<entry name="' + GITXML_FILE + '" />'
+  xmlContent += '</list>'
+
+  # Output result
+  print xmlContent
 
 # HTML export
 elif (exportType == HTML):

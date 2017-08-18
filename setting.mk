@@ -16,6 +16,7 @@ INTERESTING_DIRS_LST=interesting_dirs.list
 FILES_INFO=files_info.dat
 PROGRAMS_INFO=programs_info.dat
 INTERNET_INFO=internet_info.dat
+GIT_INFO=git_info.dat
 
 # Final report
 REPORT	:= report.xml

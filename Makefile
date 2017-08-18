@@ -83,6 +83,13 @@ $(INTERNET_INFO): $(INTERESTING_DIRS_LST) $(INTERESTING_LST) $(GITHUB_TOKEN)
 	@echo -ne "					"; echo -n "  Count: "
 	@wc -l $@ | awk '{print $$1}'
 
+$(GIT_INFO):
+	@echo "[$@] Scan for all .git repositories in local machine"
+	@echo "path,url,head,latest_tag" > $@
+	@./git_list.sh $(SCAN_DIRS) >> $@ 2>>$(ERR_LOG) 3>>$(DEBUG_LOG)
+	@echo -ne "					"; echo -n "  Count: "
+	@wc -l $@ | awk '{print $$1}'
+
 $(FILES_INFO): $(INTERESTING_LST)
 	@echo "[$@] Extract information of each interesting file"
 	@echo "file_path,MD5sum,Build-ID,Size(bytes),ModifiedTime,ModifiedTime(HumanReadable)" > $@
@@ -90,10 +97,10 @@ $(FILES_INFO): $(INTERESTING_LST)
 	@echo -ne "					"; echo -n "  Count: "
 	@wc -l $@ | awk '{print $$1}'
 
-$(REPORT): $(INTERNET_INFO) $(PROGRAMS_INFO)
+$(REPORT): $(INTERNET_INFO) $(PROGRAMS_INFO) $(GIT_INFO)
 	@echo "[$@] Generate final report"
 	@./report.py $^ > $@ 2>>$(ERR_LOG)
-	@echo "Report is stored at ./$@"
+	@echo "Report is stored at ./$@. Please open it with your internet brower such as firefox."
 clean:
 	rm -f $(REPORT) $(INTERNET_INFO) $(PROGRAMS_INFO) .*.cache
 
