@@ -97,24 +97,7 @@ for repo in git_info_rdr:
     pass
   result_git[key] = repo
 
-# Determine result
-for k in result:
-  item = result[k]
-  try:
-	latest_datetime = datetime.strptime(item['committed_date'], DATETIME_FORMAT_LONG)
-  except:
-	latest_datetime = '-'
-  try:
-	local_datetime = datetime.strptime(item['modified_date'], DATETIME_FORMAT_SHORT)
-  except:
-	local_datetime = '-'
-
-  # Package name
-  item.update({'Package': os.path.basename(k)})
- 
-  # Source
-  item.update({'Source': 'GitHub'})
-
+def updateDates(item, local_datetime, latest_datetime):
   # Latest updated or not
   try:
     if latest_datetime > local_datetime:
@@ -123,7 +106,6 @@ for k in result:
       item.update({'Updated':'Y'})
   except:
       item.update({'Updated':'-'})
-
 
   # Active development or not
   try:
@@ -144,17 +126,33 @@ for k in result:
   except:
     item.update({'Latest': '     -    '})
 
-# Process data ot local GIT info
+# Process data of GITHUB info
+for k in result:
+  item = result[k]
+  # Package name
+  item.update({'Package': os.path.basename(k)})
+  # Source
+  item.update({'Source': 'GitHub'})
+  # Get the dates
+  try:
+	latest_datetime = datetime.strptime(item['committed_date'], DATETIME_FORMAT_LONG)
+  except:
+	latest_datetime = '-'
+  try:
+	local_datetime = datetime.strptime(item['modified_date'], DATETIME_FORMAT_SHORT)
+  except:
+	local_datetime = '-'
+  # update infos related to dates
+  updateDates(item, local_datetime, latest_datetime)
+
+# Process data of local GIT info
 for g in result_git:
   item = result_git[g]
-
   # Package name
   item.update({'Package': os.path.basename(g)})
-
   # Source
   source = getSource(item['url'])
   item.update({'Source': source})
-
   # Get the dates
   try:
 	latest_datetime = datetime.strptime(item['latest_date'], DATETIME_FORMAT_SHORT)
@@ -164,34 +162,8 @@ for g in result_git:
 	local_datetime = datetime.strptime(item['local_date'], DATETIME_FORMAT_SHORT)
   except:
 	local_datetime = '-'
-
-  # Latest updated or not
-  try:
-    if latest_datetime > local_datetime:
-      item.update({'Updated':'N'})
-    else:
-      item.update({'Updated':'Y'})
-  except:
-      item.update({'Updated':'-'})
-
-  # Active development or not
-  try:
-    if int(latest_datetime.strftime('%s')) < (int(now.strftime('%s')) - int(active_threshold)):
-      item.update({'Active':'N'})
-    else:  
-      item.update({'Active':'Y'})
-  except:
-      item.update({'Active':'-'})
-
-  # Version / Date information
-  try:
-    item.update({'Local': local_datetime.strftime(DATETIME_FORMAT_SHORT)})
-  except:
-    item.update({'Local': '     -    '})
-  try:
-    item.update({'Latest': latest_datetime.strftime(DATETIME_FORMAT_SHORT)})
-  except:
-    item.update({'Latest': '     -    '})
+  # update infos related to dates
+  updateDates(item, local_datetime, latest_datetime)
 
 # PRINT RESULT
 if (exportType == XML):
