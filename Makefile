@@ -102,7 +102,7 @@ $(REPORT): $(INTERNET_INFO) $(PROGRAMS_INFO) $(GIT_INFO)
 	@./report.py $^ > $@ 2>>$(ERR_LOG)
 	@echo "Report is stored at ./$@. Please open it with your internet brower such as firefox."
 clean:
-	rm -f $(REPORT) $(INTERNET_INFO) $(PROGRAMS_INFO) .*.cache
+	rm -f $(REPORT) $(INTERNET_INFO) $(PROGRAMS_INFO) .*.cache *.xml
 
 clean-all: clean
 	rm -f *.list .*.log *tmp*
