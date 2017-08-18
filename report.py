@@ -36,8 +36,8 @@ if (exportType == XML):
   XML_FILE = "github.xml"
 
 # Some settings
-DATETIME_FORMAT_IN = '%Y-%m-%dT%H:%M:%SZ'
-DATETIME_FORMAT_OUT = '%Y-%m-%d'
+DATETIME_FORMAT_LONG = '%Y-%m-%dT%H:%M:%SZ'
+DATETIME_FORMAT_SHORT = '%Y-%m-%d'
 active_threshold = 365*24*60*60	  # 365 days (1 year)
 now = datetime.now()
 today = now.day
@@ -101,11 +101,11 @@ for repo in git_info_rdr:
 for k in result:
   item = result[k]
   try:
-	latest_datetime = datetime.strptime(item['committed_date'], DATETIME_FORMAT_IN)
+	latest_datetime = datetime.strptime(item['committed_date'], DATETIME_FORMAT_LONG)
   except:
 	latest_datetime = '-'
   try:
-	local_datetime = datetime.strptime(item['modified_date'], DATETIME_FORMAT_OUT)
+	local_datetime = datetime.strptime(item['modified_date'], DATETIME_FORMAT_SHORT)
   except:
 	local_datetime = '-'
 
@@ -136,13 +136,13 @@ for k in result:
 
   # Version / Date information
   try:
-    item.update({'Local': local_datetime.strftime(DATETIME_FORMAT_OUT)})
+    item.update({'Local': local_datetime.strftime(DATETIME_FORMAT_SHORT)})
   except:
     item.update({'Local': '     -    '})
   try:
-	item.update({'Latest': latest_datetime.strftime(DATETIME_FORMAT_OUT)})
+    item.update({'Latest': latest_datetime.strftime(DATETIME_FORMAT_SHORT)})
   except:
-	item.update({'Latest': '     -    '})
+    item.update({'Latest': '     -    '})
 
 # Process data ot local GIT info
 for g in result_git:
@@ -154,6 +154,44 @@ for g in result_git:
   # Source
   source = getSource(item['url'])
   item.update({'Source': source})
+
+  # Get the dates
+  try:
+	latest_datetime = datetime.strptime(item['latest_date'], DATETIME_FORMAT_SHORT)
+  except:
+	latest_datetime = '-'
+  try:
+	local_datetime = datetime.strptime(item['local_date'], DATETIME_FORMAT_SHORT)
+  except:
+	local_datetime = '-'
+
+  # Latest updated or not
+  try:
+    if latest_datetime > local_datetime:
+      item.update({'Updated':'N'})
+    else:
+      item.update({'Updated':'Y'})
+  except:
+      item.update({'Updated':'-'})
+
+  # Active development or not
+  try:
+    if int(latest_datetime.strftime('%s')) < (int(now.strftime('%s')) - int(active_threshold)):
+      item.update({'Active':'N'})
+    else:  
+      item.update({'Active':'Y'})
+  except:
+      item.update({'Active':'-'})
+
+  # Version / Date information
+  try:
+    item.update({'Local': local_datetime.strftime(DATETIME_FORMAT_SHORT)})
+  except:
+    item.update({'Local': '     -    '})
+  try:
+    item.update({'Latest': latest_datetime.strftime(DATETIME_FORMAT_SHORT)})
+  except:
+    item.update({'Latest': '     -    '})
 
 # PRINT RESULT
 if (exportType == XML):

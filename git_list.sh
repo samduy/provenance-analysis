@@ -23,5 +23,13 @@ for i in `find $1 -name ".git"`; do \
   LATEST_TAGS=$(for j in `/bin/ls $i/refs/tags/ | /usr/bin/sort -r | /usr/bin/head -1`; \
     do echo $j:$(/bin/cat $i/refs/tags/$j); \
     done)
-  echo $PATH,$URL,$HEADS,$LATEST_TAGS;
+
+  # Get the date of latest commit in local
+  pushd $PATH > /dev/null 2>&1 && 
+  LOCAL_DATE=$(/usr/bin/git log -1 --date=short --pretty=format:%ad) &&
+  LATEST_DATE=$(/usr/bin/git log -1 origin/master --date=short --pretty=format:%ad) &&
+  popd > /dev/null 2>&1
+
+  #echo $PATH,$URL,$HEADS,$LATEST_TAGS;
+  echo $PATH,$URL,$LOCAL_DATE,$LATEST_DATE;
   done

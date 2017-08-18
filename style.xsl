@@ -5,7 +5,7 @@
 </script>
 </head>
   <body style="font-family:Arial;font-size:8pt;background-color:#EEEEEE">
-    <div onclick="javascript:showhide('github');" title="Click to Expand/Collapse"><h2>Open sources require manual update</h2>
+    <div onclick="javascript:showhide('github');" title="Click to Expand/Collapse"><h2>[+] Open sources require manual update</h2>
     </div>
     <div align="center">
     <table id="github" style='width:90%; border-collapse: collapse;'>
@@ -14,8 +14,8 @@
        <th title="Click to sort" onclick="sortTable('github', 1)">GitHub user</th>
        <th title="Click to sort" onclick="sortTable('github', 2)">GitHub repo name</th>
        <th title="Click to sort" onclick="sortTable('github', 3)">Source</th>
-       <th title="Click to sort" onclick="sortTable('github', 4)">Updated ? (Yes/No)</th>
-       <th title="Click to sort" onclick="sortTable('github', 5)">Active ? (Yes/No)</th>
+       <th title="Click to sort" onclick="sortTable('github', 4)">Updated? (Yes/No)</th>
+       <th title="Click to sort" onclick="sortTable('github', 5)">Active? (Yes/No)</th>
        <th title="Click to sort" onclick="sortTable('github', 6)">Local modified date</th>
        <th title="Click to sort" onclick="sortTable('github', 7)">Latest release date</th>
       </tr>
@@ -58,7 +58,7 @@
       </tr>
     </xsl:for-each>
     </table></div>
-    <div onclick="javascript:showhide('git');" title="Click to Expand/Collapse"><h2>Local git repositories</h2>
+    <div onclick="javascript:showhide('git');" title="Click to Expand/Collapse"><h2>[+] Local .git repositories</h2>
     </div>
     <div align="center">
     <table id="git" style='width:90%; border-collapse: collapse;'>
@@ -66,10 +66,10 @@
        <th title="Click to sort" onclick="sortTable('git', 0)">Package name</th>
        <th title="Click to sort" onclick="sortTable('git', 1)">URL</th>
        <th title="Click to sort" onclick="sortTable('git', 2)">Source</th>
-       <!--<th title="Click to sort" onclick="sortTable('git', 3)">Updated ? (Yes/No)</th>
-       <th title="Click to sort" onclick="sortTable('git', 4)">Active ? (Yes/No)</th>-->
-       <th title="Click to sort" onclick="sortTable('git', 5)">Local commit</th>
-       <th title="Click to sort" onclick="sortTable('git', 6)">Latest tagt</th>
+       <th title="Click to sort" onclick="sortTable('git', 3)">Updated? (Yes/No)</th>
+       <th title="Click to sort" onclick="sortTable('git', 4)">Active? (Yes/No)</th>
+       <th title="Click to sort" onclick="sortTable('git', 5)">Local date</th>
+       <th title="Click to sort" onclick="sortTable('git', 6)">Latest release date</th>
       </tr>
     <xsl:for-each select="document(/list/entry/@name)//git/key">
       <tr>
@@ -97,10 +97,10 @@
 	<xsl:value-of select="url"/>
       </a></td>
       <td style="padding:0 15px" align="center"><xsl:value-of select="Source"/></td>
-      <!--<td style="padding:0 15px" align="center"><xsl:value-of select="Updated"/></td>
-      <td style="padding:0 15px" align="center"><xsl:value-of select="Active"/></td>-->
-      <td style="padding:0 15px" align="center"><xsl:value-of select="head"/></td>
-      <td style="padding:0 15px" align="center"><xsl:value-of select="latest_tag"/></td>
+      <td style="padding:0 15px" align="center"><xsl:value-of select="Updated"/></td>
+      <td style="padding:0 15px" align="center"><xsl:value-of select="Active"/></td>
+      <td style="padding:0 15px" align="center"><xsl:value-of select="local_date"/></td>
+      <td style="padding:0 15px" align="center"><xsl:value-of select="latest_date"/></td>
       </tr>
     </xsl:for-each>
     </table></div>
