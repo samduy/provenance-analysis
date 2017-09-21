@@ -12,11 +12,11 @@ Please go to <https://github.com/settings/tokens> and get your own key, and save
 $ sudo apt-get update
 ```
 
-### Install some dependant modules (Optional)
+### Install some dependant modules (Optional, but recommended)
 
-* [tabulate](https://pypi.python.org/pypi/tabulate): For nicer table result.
+* [dicttoxml](https://pypi.python.org/pypi/dicttoxml): For outputing results in XML format.
 ```bash
-pip install tabulate
+pip install dicttoxml
 ```
 
 ## 1. To start analysing
@@ -43,8 +43,14 @@ $ make clean-all
 
 ## 3. View the result
 
-By default, the final result will be printed out at the end of the analysis.
-You can also view it again in the file named `report` in working directory.
+##### Updated 20170921
+By default, the final result will be saved to an XML file named `report.xml` in working directory.
+This XML file supports XSL transformation so that it can be viewed as HTML with CSS style.
+
+To view the result, please open the file with Firefox or any web browser.
+```bash
+$ firefox ./report.xml
+```
 
 ### The format of the output result
 #### Manual 
