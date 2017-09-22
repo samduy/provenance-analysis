@@ -54,7 +54,7 @@ $ firefox ./report.xml
 
 ### An example of output result
 
-![Result table](./result_table.jpg)
+![Report table](./report_table.jpg)
 
 ## 4. Running log
 
