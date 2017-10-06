@@ -44,22 +44,26 @@ if [ -f ${CACHE_CNT} ]; then
     fi
 fi
 
-CHECKLIST=(README VERSION CHANGELOG LICENSE)
+CHECKLIST=(HISTORY VERSION CHANGELOG LICENSE)
 
 # Test function: a new Algorithm-D
 # Check the existence of any of the files in the list: CHECKLIST
 function test {
-  for f in ${CHECKLIST[@]}
-  do
-    #echo $f
-    cnt=$(find $1 -maxdepth 1 -name ${f}* | wc -l)
-    #echo $cnt
-    if [ $cnt -gt 0 ]
-    then
-      echo "y"
-      return 1
-    fi
-  done
+  c=$(find $1 -maxdepth 1 -name README* | wc -l)
+  if [ $c -gt 0 ]
+  then
+    for f in ${CHECKLIST[@]}
+    do
+      #echo $f
+      cnt=$(find $1 -maxdepth 1 -name ${f}* | wc -l)
+      #echo $cnt
+      if [ $cnt -gt 0 ]
+      then
+        echo "y"
+        return 1
+      fi
+    done
+  fi
   
   #else
   echo "n"
