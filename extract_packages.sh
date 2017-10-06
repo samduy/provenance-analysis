@@ -52,17 +52,19 @@ function test {
   c=$(find $1 -maxdepth 1 -name README* | wc -l)
   if [ $c -gt 0 ]
   then
+    find_cmd="find $1 -maxdepth 1 -name _dUmmY_"
     for f in ${CHECKLIST[@]}
     do
       #echo $f
-      cnt=$(find $1 -maxdepth 1 -name ${f}* | wc -l)
-      #echo $cnt
-      if [ $cnt -gt 0 ]
-      then
-        echo "y"
-        return 1
-      fi
+      find_cmd+=" -o -name \"${f}*\""
     done
+    cnt=$(eval $find_cmd | wc -l)
+    #echo $cnt
+    if [ $cnt -gt 0 ]
+    then
+      echo "y"
+      return 1
+    fi
   fi
   
   #else
