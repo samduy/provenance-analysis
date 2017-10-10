@@ -1,4 +1,8 @@
 ## Changelog
+##### v0.6 - 2017-10-10
+* #14: Integrate .GIT result in the final report.
+* #36: Improve quality of programs detection and therefore performance.
+
 ##### v0.5 - 2017-08-17
 * #27: Able to resume after being interrupted.
 * #28: Report displayed in HTML/XML for better 
