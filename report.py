@@ -4,6 +4,12 @@ import sys
 import csv
 import json
 import os
+
+# Add lib directory to module search path
+parent_dir = os.path.abspath(os.path.dirname(__file__))
+lib_dir = os.path.join(parent_dir, 'lib')
+sys.path.append(lib_dir)
+
 from datetime import datetime
 from urlparse import urlparse
 
@@ -26,7 +32,7 @@ if (exportType == TABULATE):
 
 if (exportType == XML):
   try:
-    from dicttoxml import dicttoxml
+    from dict2xml import dicttoxml
   except:
     exportType = HTML
 
