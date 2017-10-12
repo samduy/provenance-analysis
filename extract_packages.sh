@@ -56,7 +56,7 @@ function test {
     for f in ${CHECKLIST[@]}
     do
       #echo $f
-      find_cmd+=" -o -name \"${f}*\""
+      find_cmd+=" -o -name \"*${f}*\""
     done
     cnt=$(eval $find_cmd | wc -l)
     #echo $cnt
