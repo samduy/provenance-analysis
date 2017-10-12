@@ -34,6 +34,7 @@ if [ ! -f ${CACHE_DAT} ]; then
     touch ${CACHE_DAT}
 fi
 
+last_cnt=0
 if [ -f ${CACHE_CNT} ]; then
     last_cnt=$(head -1 ${CACHE_CNT})
     if [ ${last_cnt} -gt 0 ]; then
