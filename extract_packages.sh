@@ -50,7 +50,7 @@ CHECKLIST=(HISTORY VERSION CHANGELOG LICENSE)
 # Test function: a new Algorithm-D
 # Check the existence of any of the files in the list: CHECKLIST
 function test {
-  c=$(find $1 -maxdepth 1 -name README* | wc -l)
+  c=$(find $1 -maxdepth 1 -name "*README*" | wc -l)
   if [ $c -gt 0 ]
   then
     find_cmd="find $1 -maxdepth 1 -name _dUmmY_"
