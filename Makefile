@@ -86,7 +86,7 @@ $(INTERNET_INFO): $(INTERESTING_DIRS_LST) $(INTERESTING_LST) $(GITHUB_TOKEN)
 $(GIT_INFO):
 	@echo "[$@] Scan for all .git repositories in local machine"
 	@echo "path,url,local_date,latest_date" > $@
-	@./git_list.sh $(SCAN_DIRS) >> $@ 2>>$(ERR_LOG) 3>>$(DEBUG_LOG)
+	@./git_list.sh $(SCAN_DIRS) $@ 2>>$(ERR_LOG) 3>>$(DEBUG_LOG)
 	@echo -ne "					"; echo -n "  Count: "
 	@wc -l $@ | awk '{print $$1}'
 
